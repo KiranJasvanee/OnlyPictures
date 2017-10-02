@@ -1,15 +1,14 @@
 <p align="left">
-  <img src="promo/recent_left_colorful.png"  style="width: 400px;" width="400" />
+  <img src="promo/recent_left_colorful.png"  style="width: 200px;" width="200" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/recent_left_with_gap_colorful.png"  style="width: 240px;" width="240" />
 </p>
 <p align="left">
-  <img src="promo/recent_right_colorful.png"  style="width: 400px;" width="400" />
+  <img src="promo/recent_right_colorful.png"  style="width: 200px;" width="200" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/recent_right_with_gap_colorful.png"  style="width: 240px;" width="240" />
 </p>
-<p align="right">
-  <img src="promo/recent_left_with_gap_colorful.png"  style="width: 400px;" width="400" />
-</p>
-<p align="right">
-  <img src="promo/recent_right_with_gap_colorful.png"  style="width: 400px;" width="400" />
-</p>
+
 
 <p align="center">
     <a href="https://twitter.com/Kiranjasvanee">
