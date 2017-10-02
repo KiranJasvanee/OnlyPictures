@@ -21,30 +21,30 @@
         <img src="https://img.shields.io/badge/contact-@kiranjasvanee-blue.svg?style=flat"
              alt="Twitter">
     </a>
-    <a href="https://github.com/KiranJasvanee/KJExpandableTableTree/blob/master/LICENSE">
+    <a href="https://github.com/KiranJasvanee/OnlyPictures/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="Codecov" />
     </a>
-    <a href="https://cocoapods.org/pods/KJExpandableTableTree">
-        <img src="https://img.shields.io/cocoapods/v/KJExpandableTableTree.svg?style=flat"
+    <a href="https://cocoapods.org/pods/OnlyPictures">
+        <img src="https://img.shields.io/cocoapods/v/OnlyPictures.svg?style=flat"
              alt="Pods Version">
     </a>
-    <a href="http://cocoapods.org/pods/KJExpandableTableTree/">
-        <img src="https://img.shields.io/cocoapods/p/KJExpandableTableTree.svg?style=flat"
+    <a href="http://cocoapods.org/pods/OnlyPictures/">
+        <img src="https://img.shields.io/cocoapods/p/OnlyPictures.svg?style=flat"
              alt="Platforms">
     </a>
-    <a href="https://github.com/KiranJasvanee/KJExpandableTableTree/issues">
-        <img src="https://img.shields.io/github/issues/KiranJasvanee/KJExpandableTableTree.svg"
+    <a href="https://github.com/KiranJasvanee/OnlyPictures/issues">
+        <img src="https://img.shields.io/github/issues/KiranJasvanee/OnlyPictures.svg"
              alt="Issues">
     </a>
-    <a href="https://github.com/KiranJasvanee/KJExpandableTableTree">
-        <img src="https://img.shields.io/github/forks/KiranJasvanee/KJExpandableTableTree.svg"
+    <a href="https://github.com/KiranJasvanee/OnlyPictures">
+        <img src="https://img.shields.io/github/forks/KiranJasvanee/OnlyPictures.svg"
              alt="Forks">
     </a>
-    <a href="https://github.com/KiranJasvanee/KJExpandableTableTree">
-        <img src="https://img.shields.io/github/stars/KiranJasvanee/KJExpandableTableTree.svg"
+    <a href="https://github.com/KiranJasvanee/OnlyPictures">
+        <img src="https://img.shields.io/github/stars/KiranJasvanee/OnlyPictures.svg"
              alt="Stars">
     </a>
-    <a href="https://github.com/KiranJasvanee/KJExpandableTableTree">
+    <a href="https://github.com/KiranJasvanee/OnlyPictures">
         <img src="https://img.shields.io/badge/Language-Swift-yellow.svg"
              alt="Stars">
     </a>
