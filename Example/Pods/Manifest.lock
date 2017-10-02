@@ -1,0 +1,16 @@
+PODS:
+  - OnlyPictures (0.1.0)
+
+DEPENDENCIES:
+  - OnlyPictures (from `../`)
+
+EXTERNAL SOURCES:
+  OnlyPictures:
+    :path: ../
+
+SPEC CHECKSUMS:
+  OnlyPictures: 65d4fe1585b436739f111293aa391fd015385a6a
+
+PODFILE CHECKSUM: be6c5546168bcdc866747ffe4dc8c4060690def4
+
+COCOAPODS: 1.3.1

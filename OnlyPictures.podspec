@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'OnlyPictures'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of OnlyPictures.'
+  s.summary          = 'Flexible circular pictures with overlapping feature'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -19,16 +19,17 @@ Pod::Spec.new do |s|
 
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
+It provides circular pictures with overlapping feature, it's so flexible to have many supporting features like alignment, distance, gap and more. It will surely come out with other features too.
                        DESC
 
-  s.homepage         = 'https://github.com/Kiran Jasvanee/OnlyPictures'
+  s.homepage         = 'https://github.com/KiranJasvanee/OnlyPictures'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Kiran Jasvanee' => 'kiran.jasvanee@gmail.com' }
-  s.source           = { :git => 'https://github.com/Kiran Jasvanee/OnlyPictures.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/KiranJasvanee/OnlyPictures.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'OnlyPictures/Classes/**/*'
   
