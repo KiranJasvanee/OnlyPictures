@@ -1,21 +1,19 @@
-<p align="left">
+<p align="center">
   <img src="promo/recent_left_colorful.png"  style="width: 200px;" width="200" /> 
-</p>
-<p align="center">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="promo/left_scroll_colorful.gif"  style="width: 260px;" width="260" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/recent_left_with_gap_colorful.png"  style="width: 240px;" width="240" />
 </p>
-<p align="right">
-<img src="promo/recent_left_with_gap_colorful.png"  style="width: 240px;" width="240" />
-</p>
-<p align="left">
-  <img src="promo/recent_right_colorful.png"  style="width: 200px;" width="200" /> 
-</p>
+
 <p align="center">
+  <img src="promo/recent_right_colorful.png"  style="width: 200px;" width="200" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="promo/right_scroll_colorful.gif"  style="width: 260px;" width="260" /> 
-</p>
-<p align="right">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="promo/recent_right_with_gap_colorful.png"  style="width: 240px;" width="240" />
 </p>
+
 
 
 <p align="center">
