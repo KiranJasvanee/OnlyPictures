@@ -1,6 +1,3 @@
-<p align="left">
-  <img src="promo/LogoDark.png"  style="width: 200px;" width="300" />
-</p>
 
 <p align="center">
   <img src="promo/recent_left_colorful.png"  style="width: 220px;" width="220" /> 
