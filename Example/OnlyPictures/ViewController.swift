@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         onlyPictures.dataSource = self
         onlyPictures.delegate = self
         onlyPictures.order = .ascending
-        onlyPictures.alignment = .left
+        onlyPictures.alignment = .right
         onlyPictures.countPosition = .right
-        onlyPictures.recentAt = .left
+        onlyPictures.recentAt = .right
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,9 +39,9 @@ extension ViewController: OnlyPicturesDataSource {
     func numberOfPictures() -> Int {
         return pictures.count
     }
-    func visiblePictures() -> Int {
-        return 6
-    }
+//    func visiblePictures() -> Int {
+//        return 6
+//    }
     func pictureViews(index: Int) -> UIImage {
         return pictures[index]
     }
