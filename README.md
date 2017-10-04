@@ -81,7 +81,8 @@ Use `DataSource` for data assignment & `Delegate` to get indication of action pe
     func pictureViews(index: Int) -> UIImage {
         return pictures[index]
     }
-}```
+}
+```
 
 ### Author
 
