@@ -67,7 +67,8 @@ Use `DataSource` for data assignment & `Delegate` to get indication of action pe
 
 #### DataSource 
 
-```extension ViewController: OnlyPicturesDataSource {
+```
+extension ViewController: OnlyPicturesDataSource {
     // returns the total no of pictures
     func numberOfPictures() -> Int {
         return pictures.count
