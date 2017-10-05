@@ -148,8 +148,8 @@ extension ViewController: OnlyPicturesDelegate {
 ##### .order
 
 - Pictures works based on `LIFO` - Last In First Out, means last added will be shown at Top. 
-- If your array contains values in `ascending`, it will show last value OR last appended value at top. 
-- If your array contains values in `descending`, set below `.order property` to `.descending` to first value at top. 
+- If your array contains pictures in `ascending`, it will show last picture OR in other words last appended picture at top. 
+- If your array contains pictures in `descending`, set `.order property` to `.descending` to show first picture at top. 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  .ascending &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   .descending
 
@@ -157,6 +157,15 @@ extension ViewController: OnlyPicturesDelegate {
 
 ```
 onlyPictures.order = .descending
+```
+
+##### .recentAt
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  .left &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   .right
+
+&nbsp;&nbsp;&nbsp; <img src="promo/recent_left_colorful.png"  style="width: 160px;" width="180" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="promo/recent_right_colorful.png"  style="width: 180px;" width="180" /> 
+
+```
+onlyPictures.recentAt = .left
 ```
 
 
@@ -178,6 +187,8 @@ onlyPictures.alignment = .left
 ```
 onlyPictures.countPosition = .right
 ```
+
+
 
 ### Author
 
