@@ -63,9 +63,13 @@ pod 'OnlyPictures'
 ```
 
 ### Usage
+
+Add `UIView` in your outlet, select it and go to `Properties -> Identity Inspector`,  add `OnlyHorizontalPictures` in `class property`. `OnlyVerticalPictures` about to release soon.
+
+
 Use `DataSource` for data assignment & `Delegate` to get indication of action performed in pictures.
 
-#### DataSource 
+#### DataSource Methods
 
 ```
 extension ViewController: OnlyPicturesDataSource {
@@ -90,6 +94,41 @@ extension ViewController: OnlyPicturesDataSource {
     
     func pictureViews(index: Int) -> UIImage {
         return pictures[index]
+    }
+}
+```
+#### Delegate Methods
+```
+extension ViewController: OnlyPicturesDelegate {
+    
+    // ---------------------------------------------------
+    // receive an action of selected picture tap index
+    
+    func pictureView(_ imageView: UIImageView, didSelectAt index: Int) {
+        
+    }
+    
+    // ---------------------------------------------------
+    // receive an action of tap upon count
+    
+    func pictureViewCountDidSelect() {
+        
+    }
+    
+    // ---------------------------------------------------
+    // receive a count, incase you want to do additionally things with it.
+    // even if your requirement is to hide count and handle it externally with below fuction, you can hide it using property `isVisibleCount = true`.
+    
+    func pictureViewCount(value: Int) {
+        print("count value: \(value)")
+    }
+    
+    
+    // ---------------------------------------------------
+    // receive an action, whem tap occures anywhere in OnlyPicture view.
+    
+    func pictureViewDidSelect() {
+        
     }
 }
 ```
