@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         onlyPictures.alignment = .center
         onlyPictures.countPosition = .right
         onlyPictures.recentAt = .left
-        onlyPictures.gap = 36
+        onlyPictures.spacing = 6
         onlyPictures.spacingColor = UIColor.init(red: 230/255, green: 230/255, blue: 230/255, alpha: 1.0)
         
     }
