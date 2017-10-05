@@ -207,6 +207,15 @@ onlyPictures.gap = 36
 onlyPictures.spacing = 2
 ```
 
+##### .spacingColor
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .spacingColor = .gray &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .spacingColor = .white
+
+<img src="promo/spacingColor_property/spacing_4_with_gray.png"  style="width: 220px;" width="220" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/spacingColor_property/spacing_4_with_white.png"  style="width: 220px;" width="220" />
+
+```
+onlyPictures.spacingColor = UIColor.white
+```
+
 
 ### Author
 
