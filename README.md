@@ -66,8 +66,18 @@ pod 'OnlyPictures'
 
 Add `UIView` in your outlet, select it and go to `Properties -> Identity Inspector`,  add `OnlyHorizontalPictures` in `class property`. `OnlyVerticalPictures` about to release soon.
 
+<img src="promo/UIVIew_outlet.png"  style="width: 220px;" width="220" /> &nbsp;&nbsp;&nbsp;&nbsp; `->` &nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/identity_inspector_class_property_assignment.png"  style="width: 220px;" width="220" /> 
+
+Create `instance` of this outlet as below.
+```
+@IBOutlet weak var onlyPictures: OnlyHorizontalPictures!
+```
 
 Use `DataSource` for data assignment & `Delegate` to get indication of action performed in pictures.
+```
+onlyPictures.dataSource = self
+onlyPictures.delegate = self
+```
 
 #### DataSource Methods
 
