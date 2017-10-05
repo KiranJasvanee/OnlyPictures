@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        onlyPictures.layer.cornerRadius = 20.0
+        onlyPictures.layer.masksToBounds = true
+        
         onlyPictures.dataSource = self
         onlyPictures.delegate = self
         onlyPictures.order = .descending
