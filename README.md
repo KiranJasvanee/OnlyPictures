@@ -69,15 +69,18 @@ Use `DataSource` for data assignment & `Delegate` to get indication of action pe
 
 ```
 extension ViewController: OnlyPicturesDataSource {
+
     // returns the total no of pictures
     func numberOfPictures() -> Int {
         return pictures.count
     }
+    
     // returns the no of pictures should be visible in screen. 
     // In above preview, Left & Right formats are example of visible pictures, if you want pictures to be shown without count, remove this function, it's optional.
     func visiblePictures() -> Int {
         return 6
     }
+    
     // return the images you want to show.
     func pictureViews(index: Int) -> UIImage {
         return pictures[index]
