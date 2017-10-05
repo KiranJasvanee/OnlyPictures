@@ -31,9 +31,10 @@ class ViewController: UIViewController {
         onlyPictures.spacingColor = UIColor.white
         onlyPictures.backgroundColorForCount = .red
         onlyPictures.gap = 44
-        onlyPictures.imageInPlaceOfCount = #imageLiteral(resourceName: "remaining_bubble_image")
         
-        // onlyPictures.backgroundColorForCount = 
+        onlyPictures.backgroundColorForCount = UIColor.init(red: 230/255, green: 230/255, blue: 230/255, alpha: 1.0)
+        onlyPictures.textColorForCount = .red
+        onlyPictures.fontForCount = UIFont(name: "HelveticaNeue", size: 18)!
     }
 
     override func didReceiveMemoryWarning() {

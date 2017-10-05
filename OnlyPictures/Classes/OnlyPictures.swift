@@ -573,8 +573,6 @@ internal extension OnlyPictures {
 extension OnlyPictures {
     fileprivate func setCountTheme(font: UIFont, textColor: UIColor) {
         
-        self.fontForCount = font
-        self.textColorForCount = textColor
         if self.isVisibleCountExists() {
             self.setCountRuntimeFlexibility(count: self.picturesCount-self.visiblePictures)
         }
