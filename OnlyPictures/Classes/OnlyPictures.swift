@@ -44,7 +44,10 @@ public class OnlyPictures: UIView {
     public var dataSource: OnlyPicturesDataSource? = nil {
         didSet {
             if self.dataSource != nil {
-                self.reloadData()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                    self.reloadData()
+                })
             }
         }
     }
