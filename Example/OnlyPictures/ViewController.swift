@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         onlyPictures.dataSource = self
         onlyPictures.delegate = self
         onlyPictures.order = .descending
-        onlyPictures.alignment = .left
+        onlyPictures.alignment = .center
         onlyPictures.countPosition = .right
         onlyPictures.recentAt = .left
         onlyPictures.reloadData()
