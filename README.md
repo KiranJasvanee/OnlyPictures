@@ -1,17 +1,17 @@
 
 <p align="center">
   <img src="promo/recent_left_colorful.png"  style="width: 220px;" width="220" /> 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="promo/left_scroll_colorful.gif"  style="width: 280px;" width="280" /> 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="promo/recent_left_with_gap_colorful.png"  style="width: 260px;" width="260" />
 </p>
 
 <p align="center">
   <img src="promo/recent_right_colorful.png"  style="width: 220px;" width="220" /> 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="promo/right_scroll_colorful.gif"  style="width: 280px;" width="280" /> 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="promo/recent_right_with_gap_colorful.png"  style="width: 260px;" width="260" />
 </p>
 
@@ -63,24 +63,72 @@ pod 'OnlyPictures'
 ```
 
 ### Usage
+
+Add `UIView` in your outlet, select it and go to `Properties -> Identity Inspector`,  add `OnlyHorizontalPictures` in `class property`. `OnlyVerticalPictures` about to release soon.
+
+
 Use `DataSource` for data assignment & `Delegate` to get indication of action performed in pictures.
 
-#### DataSource 
+#### DataSource Methods
 
 ```
 extension ViewController: OnlyPicturesDataSource {
+
+    // ---------------------------------------------------
     // returns the total no of pictures
+    
     func numberOfPictures() -> Int {
         return pictures.count
     }
+    
+    // ---------------------------------------------------
     // returns the no of pictures should be visible in screen. 
     // In above preview, Left & Right formats are example of visible pictures, if you want pictures to be shown without count, remove this function, it's optional.
+    
     func visiblePictures() -> Int {
         return 6
     }
+    
+    // ---------------------------------------------------
     // return the images you want to show.
+    
     func pictureViews(index: Int) -> UIImage {
         return pictures[index]
+    }
+}
+```
+#### Delegate Methods
+```
+extension ViewController: OnlyPicturesDelegate {
+    
+    // ---------------------------------------------------
+    // receive an action of selected picture tap index
+    
+    func pictureView(_ imageView: UIImageView, didSelectAt index: Int) {
+        
+    }
+    
+    // ---------------------------------------------------
+    // receive an action of tap upon count
+    
+    func pictureViewCountDidSelect() {
+        
+    }
+    
+    // ---------------------------------------------------
+    // receive a count, incase you want to do additionally things with it.
+    // even if your requirement is to hide count and handle it externally with below fuction, you can hide it using property `isVisibleCount = true`.
+    
+    func pictureViewCount(value: Int) {
+        print("count value: \(value)")
+    }
+    
+    
+    // ---------------------------------------------------
+    // receive an action, whem tap occures anywhere in OnlyPicture view.
+    
+    func pictureViewDidSelect() {
+        
     }
 }
 ```
