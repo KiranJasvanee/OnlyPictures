@@ -107,8 +107,10 @@ public class OnlyPictures: UIView {
     internal var visiblePictures: Int = 0
     
     internal var buttonCount: UIButton? = nil
+
     public var imageInPlaceOfCount: UIImage? = nil {
         didSet {
+            print("called A")
             if let image = self.imageInPlaceOfCount {
                 self.setCountImage(image)
             }
@@ -116,6 +118,7 @@ public class OnlyPictures: UIView {
     }
     public var backgroundColorForCount: UIColor? = UIColor.lightGray {
         didSet {
+            print("called B")
             self.buttonCount?.backgroundColor = self.backgroundColorForCount
         }
     }
@@ -615,13 +618,13 @@ extension OnlyPictures {
         }
         
         // it indicates that, if there are no image assignment, set count values.
-        if let image = imageInPlaceOfCount {
+        if let image = self.imageInPlaceOfCount {
             // if there is custom image to apply.
             self.buttonCount?.setTitle("", for: .normal)
             self.buttonCount?.setImage(image, for: .normal)
             self.buttonCount?.backgroundColor = .white
             self.buttonCount?.widthAnchor.constraint(equalToConstant: SIZE_OF_IMAGEVIEWS).isActive = true  // We have remove width, if there is image to show, set default width to count circle.
-            
+
         }else{
             self.buttonCount?.titleLabel?.font = self.fontForCount
             let countForCountCircle = "+\(count)"
@@ -629,7 +632,7 @@ extension OnlyPictures {
             let width = countForCountCircle.width(withConstrainedHeight: SIZE_OF_IMAGEVIEWS, font: self.fontForCount)
             let caluclateWidth = (width+24)>SIZE_OF_IMAGEVIEWS ? (width+24) : SIZE_OF_IMAGEVIEWS
             self.buttonCount?.widthAnchor.constraint(equalToConstant: caluclateWidth).isActive = true
-            
+
             // custom colors if developer set for count circle.
             self.buttonCount?.backgroundColor = self.backgroundColorForCount
             self.buttonCount?.setTitleColor(self.textColorForCount, for: .normal)
@@ -648,7 +651,6 @@ internal extension OnlyPictures {
     
     func setCountImage(_ image: UIImage) {
         if !__CGSizeEqualToSize(image.size, .zero){
-            self.imageInPlaceOfCount = image
             self.buttonCount?.setTitle("", for: .normal)
             self.buttonCount?.backgroundColor = .white
             self.buttonCount?.setBackgroundImage(image, for: .normal)

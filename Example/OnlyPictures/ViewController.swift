@@ -28,9 +28,11 @@ class ViewController: UIViewController {
         onlyPictures.alignment = .center
         onlyPictures.countPosition = .right
         onlyPictures.recentAt = .left
-        onlyPictures.spacing = 4
         onlyPictures.spacingColor = UIColor.white
+        onlyPictures.backgroundColorForCount = .red
+        onlyPictures.gap = 44
         onlyPictures.imageInPlaceOfCount = #imageLiteral(resourceName: "remaining_bubble_image")
+        
         // onlyPictures.backgroundColorForCount = 
     }
 
