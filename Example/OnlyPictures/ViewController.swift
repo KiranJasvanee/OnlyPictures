@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         onlyPictures.countPosition = .left
         onlyPictures.recentAt = .right
         onlyPictures.gap = 44
+        onlyPictures.isVisibleCount = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +50,34 @@ extension ViewController: OnlyPicturesDataSource {
 }
 
 extension ViewController: OnlyPicturesDelegate {
+    
+    // ---------------------------------------------------
+    // receive an action of selected picture tap index
+    
     func pictureView(_ imageView: UIImageView, didSelectAt index: Int) {
+        
+    }
+    
+    // ---------------------------------------------------
+    // receive an action of tap upon count
+    
+    func pictureViewCountDidSelect() {
+        
+    }
+    
+    // ---------------------------------------------------
+    // receive a count, incase you want to do additionally things with it.
+    // even if your requirement is to hide count and handle it externally with below fuction, you can hide it using property `isVisibleCount = true`.
+    
+    func pictureViewCount(value: Int) {
+        print("count value: \(value)")
+    }
+    
+    
+    // ---------------------------------------------------
+    // receive an action, whem tap occures anywhere in OnlyPicture view.
+    
+    func pictureViewDidSelect() {
         
     }
 }
