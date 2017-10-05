@@ -216,6 +216,47 @@ onlyPictures.spacing = 2
 onlyPictures.spacingColor = UIColor.white
 ```
 
+##### .imageInPlaceOfCount
+
+- Set image in place of count. If this property set, count properties won't effect.
+
+<img src="promo/imageInPlaceOfCount_property/imageInPlaceOfCount_1.png"  style="width: 220px;" width="220" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/imageInPlaceOfCount_property/imageInPlaceOfCount_2.png"  style="width: 260px;" width="260" />
+
+```
+onlyPictures.imageInPlaceOfCount = UIImage(named:"image_name")
+```
+
+#### Properties for count
+
+##### .backgroundColorForCount
+
+<img src="promo/backgroundColorForCount_property/backgroundColorForCount.png"  style="width: 220px;" width="220" /> 
+
+```
+onlyPictures.backgroundColorForCount = .orange
+```
+
+##### .textColorForCount
+
+<img src="promo/textColorForCount_property/textColorForCount.png"  style="width: 220px;" width="220" /> 
+
+```
+onlyPictures.textColorForCount = .red
+```
+
+##### .fontForCount
+
+<img src="promo/fontForCount_property/fontForCount.png"  style="width: 220px;" width="220" /> 
+
+```
+onlyPictures.fontForCount = UIFont(name: "HelveticaNeue", size: 18)!
+```
+
+##### .isHiddenVisibleCount
+- To hide count, set `.isHiddenVisibleCount = true`. But you can receive count in a following funtion of `OnlyPicturesDelegate` - `pictureViewCount(value: Int)`. 
+```
+onlyPictures.isHiddenVisibleCount = true
+```
 
 ### Author
 
