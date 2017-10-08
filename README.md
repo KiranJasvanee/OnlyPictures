@@ -1,18 +1,18 @@
 
 <p align="center">
-  <img src="promo/recent_left_colorful.png"  style="width: 220px;" width="220" /> 
+  <img src="promo/general/recent_left_colorful.png"  style="width: 220px;" width="220" /> 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="promo/left_scroll_colorful.gif"  style="width: 280px;" width="280" /> 
+  <img src="promo/general/left_scroll_colorful.gif"  style="width: 280px;" width="280" /> 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="promo/recent_left_with_gap_colorful.png"  style="width: 260px;" width="260" />
+  <img src="promo/general/recent_left_with_gap_colorful.png"  style="width: 260px;" width="260" />
 </p>
 
 <p align="center">
-  <img src="promo/recent_right_colorful.png"  style="width: 220px;" width="220" /> 
+  <img src="promo/general/recent_right_colorful.png"  style="width: 220px;" width="220" /> 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="promo/right_scroll_colorful.gif"  style="width: 280px;" width="280" /> 
+  <img src="promo/general/right_scroll_colorful.gif"  style="width: 280px;" width="280" /> 
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="promo/recent_right_with_gap_colorful.png"  style="width: 260px;" width="260" />
+  <img src="promo/general/recent_right_with_gap_colorful.png"  style="width: 260px;" width="260" />
 </p>
 
 
@@ -66,7 +66,7 @@ pod 'OnlyPictures'
 
 Add `UIView` in your outlet, select it and go to `Properties -> Identity Inspector`,  add `OnlyHorizontalPictures` in `class property`. `OnlyVerticalPictures` about to release soon.
 
-<img src="promo/UIVIew_outlet.png"  style="width: 220px;" width="220" /> &nbsp;&nbsp;&nbsp;&nbsp; `->` &nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/identity_inspector_class_property_assignment.png"  style="width: 220px;" width="220" /> 
+<img src="promo/general/UIVIew_outlet.png"  style="width: 220px;" width="220" /> &nbsp;&nbsp;&nbsp;&nbsp; `->` &nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/general/identity_inspector_class_property_assignment.png"  style="width: 220px;" width="220" /> 
 
 Create `instance` of this outlet as below.
 ```
@@ -162,7 +162,7 @@ onlyPictures.order = .descending
 ##### .recentAt
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `.left` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   `.right`
 
-&nbsp;&nbsp;&nbsp; <img src="promo/recent_left_colorful.png"  style="width: 160px;" width="180" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="promo/recent_right_colorful.png"  style="width: 180px;" width="180" /> 
+&nbsp;&nbsp;&nbsp; <img src="promo/general/recent_left_colorful.png"  style="width: 160px;" width="180" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="promo/general/recent_right_colorful.png"  style="width: 180px;" width="180" /> 
 
 ```
 onlyPictures.recentAt = .left
@@ -182,7 +182,7 @@ onlyPictures.alignment = .left
 ##### .countPosition
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `.right` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;   `.left`
 
-&nbsp;&nbsp;&nbsp; <img src="promo/recent_left_colorful.png"  style="width: 160px;" width="180" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="promo/recent_right_colorful.png"  style="width: 180px;" width="180" /> 
+&nbsp;&nbsp;&nbsp; <img src="promo/general/recent_left_colorful.png"  style="width: 160px;" width="180" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="promo/general/recent_right_colorful.png"  style="width: 180px;" width="180" /> 
 
 ```
 onlyPictures.countPosition = .right
