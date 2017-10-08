@@ -245,9 +245,9 @@ onlyPictures.gap = 36
 ```
 
 ##### .spacing
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    `.spacing = 0` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     `.spacing = 2`     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   `.spacing = 4` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   `.spacing = 4` 
+&nbsp;&nbsp;&nbsp;    `.spacing = 0` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     `.spacing = 2`     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   `.spacing = 4` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   `.spacing = 4` 
 
-<img src="promo/spacing_property/spacing_0.png"  style="width: 180px;" width="180" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_2.png"  style="width: 200px;" width="200" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_4.png"  style="width: 220px;" width="220" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_4_with_white.png"  style="width: 220px;" width="220" />
+<img src="promo/spacing_property/spacing_0.png"  style="width: 160px;" width="160" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_2.png"  style="width: 180px;" width="180" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_4.png"  style="width: 200px;" width="200" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_4_with_white.png"  style="width: 200px;" width="200" />
 
 ```
 onlyPictures.spacing = 2
@@ -304,7 +304,7 @@ onlyPictures.fontForCount = UIFont(name: "HelveticaNeue", size: 18)!
 onlyPictures.isHiddenVisibleCount = true
 ```
 
-#### Things you can do additionally, Insert & Remove at First/Last/Specific-Position
+#### *Things you can do additionally, Insert & Remove at First/Last/Specific-Position*
 - NOTE: it's your responsibility to insert/remove image in your collection too, you used for pictures. It's similar pattern you follows using UITableView.
 
 ##### Insert first in `.order = .descending`
@@ -345,7 +345,7 @@ onlyPictures.removeLast(withAnimation: .popdown)
 onlyPictures.removePicture(atIndex: 2, withAnimation: .popdown)
 ```
 
-##### Let's check how insertion works with dynamic images. remove is same as above.
+##### *Let's check how insertion works with dynamic images. remove is same as above.*
 ##### Insert first in `.order = .descending`
 <img src="promo/Insert_and_remove/URL_Images/insert_at_first.gif"  style="width: 260px;" width="260" />
 
