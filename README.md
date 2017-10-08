@@ -15,6 +15,30 @@
   <img src="promo/general/recent_right_with_gap_colorful.png"  style="width: 260px;" width="260" />
 </p>
 
+<p align="center">
+  <img src="promo/URL_images/URL_images_allocation.gif"  style="width: 220px;" width="220" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/append_and_reload_when_scroll.gif"  style="width: 280px;" width="280" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/append_and_reload_when_count.gif"  style="width: 260px;" width="260" />
+</p>
+
+<p align="center">
+  <img src="promo/Insert_and_remove/descending_work/insert_at_first_when_count.gif"  style="width: 220px;" width="220" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/insert_at_last_when_scrollable.gif"  style="width: 280px;" width="280" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/insert_at_specific_position_when_count.gif"  style="width: 260px;" width="260" />
+</p>
+
+<p align="center">
+  <img src="promo/Insert_and_remove/descending_work/remove_from_first_when_count.gif"  style="width: 220px;" width="220" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/remove_from_last_when_scrollable.gif"  style="width: 280px;" width="280" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/remove_from_specific_position_when_count.gif"  style="width: 260px;" width="260" />
+</p>
+
 
 
 <p align="center">
@@ -118,8 +142,9 @@ extension ViewController: OnlyPicturesDataSource {
         // Use 'index' to receive specific url from your collection. It's similar to indexPath.row in UITableView.
         let url = URL(string: self.pictures[index])
         
-        // Use any library to allocate your image from url to imageView. I've used SDWebImage here for downloading, assigning & caching.
-        imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
+        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")   // placeholder image
+        imageView.af_setImage(withURL: url!)                                     // Use any library to allocate your image from url to imageView. I've used SDWebImage here for downloading, assigning & caching.
+
     }
 }
 ```
