@@ -305,6 +305,76 @@ onlyPictures.isHiddenVisibleCount = true
 ```
 
 #### Things you can do additionally, Insert & Remove at First/Last/Specific-Position
+- NOTE: it's your responsibility to insert/remove image in your collection too, you used for pictures. It's similar pattern you follows using UITableView.
+
+##### Insert first in `.order = .descending`
+
+<img src="promo/Insert_and_remove/descending_work/insert_at_first_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/insert_at_first_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.insertFirst(image: UIImage(named: "p11"), withAnimation: .popup)
+```
+
+##### Insert last in `.order = .descending`
+<img src="promo/Insert_and_remove/descending_work/insert_at_last_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/insert_at_last_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.insertLast(image: UIImage(named: "p12"), withAnimation: .popup)
+```
+
+##### Insert at specific position in `.order = .descending`, below added at 2nd position
+<img src="promo/Insert_and_remove/descending_work/insert_at_specific_position_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/insert_at_specific_position_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.insertPicture(UIImage(named: "p12"), atIndex: 2, withAnimation: .popup)
+```
+
+##### Remove first in `.order = .descending`
+<img src="promo/Insert_and_remove/descending_work/remove_from_first_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/remove_from_first_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.removeFirst(withAnimation: .popdown)
+```
+
+##### Remove last in `.order = .descending`
+<img src="promo/Insert_and_remove/descending_work/remove_from_last_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/remove_from_last_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.removeLast(withAnimation: .popdown)
+```
+
+
+##### Remove from specific position in `.order = .descending`, below removed from 2nd position
+<img src="promo/Insert_and_remove/descending_work/remove_from_specific_position_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/remove_from_specific_position_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.removePicture(atIndex: 2, withAnimation: .popdown)
+```
+
+##### Let's check how insertion works with dynamic images. remove is same as above.
+##### Insert first in `.order = .descending`
+<img src="promo/Insert_and_remove/URL_Images/insert_at_first.gif"  style="width: 260px;" width="260" /> 
+```
+let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
+onlyPictures.insertFirst(withAnimation: .popup) { (imageView) in
+        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+        imageView.af_setImage(withURL: url!)
+}
+```
+
+##### Insert last in `.order = .descending`
+<img src="promo/Insert_and_remove/URL_Images/insert_at_last.gif"  style="width: 260px;" width="260" /> 
+```
+let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
+onlyPictures.insertLast(withAnimation: .popup) { (imageView) in
+        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+        imageView.af_setImage(withURL: url!)
+}
+```
+
+##### Insert at specific position in `.order = .descending`, below added at 2nd position
+<img src="promo/Insert_and_remove/URL_Images/insert_at_specific_position.gif"  style="width: 260px;" width="260" /> 
+```
+let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
+onlyPictures.insertPicture(atIndex: 2, withAnimation: .popup) { (imageView) in
+        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+        imageView.af_setImage(withURL: url!)
+}
+```
 
 ### Author
 
