@@ -31,7 +31,7 @@ protocol OnlyPictureInsertRemoveProtocol{
 
 extension OnlyPictures: OnlyPictureInsertRemoveProtocol{
     
-    internal func insertFirst(image: UIImage, withAnimation animation: InsertionAnimation) {
+    public func insertFirst(image: UIImage, withAnimation animation: InsertionAnimation) {
         
         if self.order == .ascending{
             
@@ -51,7 +51,7 @@ extension OnlyPictures: OnlyPictureInsertRemoveProtocol{
         }
     }
     
-    internal func insertFirst(withAnimation animation: InsertionAnimation, ImageViewCallback: (UIImageView) -> ()) {
+    public func insertFirst(withAnimation animation: InsertionAnimation, ImageViewCallback: (UIImageView) -> ()) {
         
         if self.order == .ascending{
             
@@ -74,7 +74,7 @@ extension OnlyPictures: OnlyPictureInsertRemoveProtocol{
         }
     }
     
-    internal func insertLast(image: UIImage, withAnimation animation: InsertionAnimation) {
+    public func insertLast(image: UIImage, withAnimation animation: InsertionAnimation) {
         
         if self.order == .ascending{
             
@@ -94,7 +94,7 @@ extension OnlyPictures: OnlyPictureInsertRemoveProtocol{
         }
     }
     
-    internal func insertLast(withAnimation animation: InsertionAnimation, ImageViewCallback: (UIImageView) -> ()){
+    public func insertLast(withAnimation animation: InsertionAnimation, ImageViewCallback: (UIImageView) -> ()){
         
         if self.order == .ascending{
             
@@ -162,7 +162,7 @@ extension OnlyPictures: OnlyPictureInsertRemoveProtocol{
     
     
     
-    internal func insertPicture(_ image: UIImage, atIndex index: Int, withAnimation animation: InsertionAnimation) {
+    public func insertPicture(_ image: UIImage, atIndex index: Int, withAnimation animation: InsertionAnimation) {
         
         // When order is ascending, last comes recent. adding at last index, simply append it.
         // When order is descending, first comes recent. adding at first index, simply append it.
@@ -325,7 +325,7 @@ extension OnlyPictures: OnlyPictureInsertRemoveProtocol{
 
 
 extension OnlyPictures{
-    internal func removeFirst(withAnimation animation: RemovationAnimation){
+    public func removeFirst(withAnimation animation: RemovationAnimation){
         
         // ascending order
         // If it's descending,
@@ -349,7 +349,7 @@ extension OnlyPictures{
         }
         
     }
-    internal func removeLast(withAnimation animation: RemovationAnimation){
+    public func removeLast(withAnimation animation: RemovationAnimation){
         if self.order == .ascending {
             
             // This condition indicates, either less or no visible pictures, so in state of no remaining count, simply remove last one.
@@ -396,7 +396,7 @@ extension OnlyPictures{
         self.animate(pictureImageView, withAnimation: animation)
     }
     
-    internal func removePicture(atIndex index: Int, withAnimation animation: RemovationAnimation){
+    public func removePicture(atIndex index: Int, withAnimation animation: RemovationAnimation){
         
         // Indicates that, index should be above visible pictures starting index to ending index.
         guard index < self.picturesCount else {

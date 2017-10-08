@@ -1,0 +1,6 @@
+framework module OnlyPictures {
+  umbrella header "OnlyPictures-umbrella.h"
+
+  export *
+  module * { export * }
+}

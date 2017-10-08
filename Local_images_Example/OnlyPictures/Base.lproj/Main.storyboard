@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="OnlyPictures_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fI3-p8-Swn"/>
+                        <viewControllerLayoutGuide type="bottom" id="wP8-ds-xGQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LnY-BX-ypo" customClass="OnlyHorizontalPictures" customModule="OnlyPictures">
+                                <rect key="frame" x="16" y="40" width="343" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="72n-D5-TXJ"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lf5-50-kZP">
+                                <rect key="frame" x="16" y="104" width="343" height="543"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1E6-gy-IfQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="528"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPT-e5-vpa">
+                                                <rect key="frame" x="100" y="20" width="143" height="30"/>
+                                                <state key="normal" title="Add more and reload"/>
+                                                <connections>
+                                                    <action selector="addMoreWithReloadActionListener:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ihn-4o-B0P"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDP-m3-W7n">
+                                                <rect key="frame" x="127.5" y="58" width="88" height="30"/>
+                                                <state key="normal" title="Insert at first"/>
+                                                <connections>
+                                                    <action selector="insertAtFirstActionListener:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aly-CT-H2u"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kb-8S-w7x">
+                                                <rect key="frame" x="128.5" y="96" width="85" height="30"/>
+                                                <state key="normal" title="Insert at last"/>
+                                                <connections>
+                                                    <action selector="insertLastActionListener:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="TNq-1Q-ZRV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YKI-vf-1xD">
+                                                <rect key="frame" x="98" y="134" width="146" height="30"/>
+                                                <state key="normal" title="Insert at 2nd position"/>
+                                                <connections>
+                                                    <action selector="insertAt2ndPositionActionListener:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="2Ah-lD-mJO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiJ-Z9-cNY">
+                                                <rect key="frame" x="130" y="172" width="82" height="30"/>
+                                                <state key="normal" title="remove first"/>
+                                                <connections>
+                                                    <action selector="removeFirstActionListener:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XZs-Jg-QZR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYD-RA-Zg5">
+                                                <rect key="frame" x="131" y="210" width="80" height="30"/>
+                                                <state key="normal" title="remove last"/>
+                                                <connections>
+                                                    <action selector="removeLastActionListener:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qki-ep-cPV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5b-6r-OD5">
+                                                <rect key="frame" x="92.5" y="248" width="157" height="30"/>
+                                                <state key="normal" title="remove at 2nd position"/>
+                                                <connections>
+                                                    <action selector="removeAt2ndPositionActionListener:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4zc-yJ-4Uy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="M5b-6r-OD5" secondAttribute="bottom" constant="250" id="5QD-9i-HbB"/>
+                                            <constraint firstItem="JPT-e5-vpa" firstAttribute="centerX" secondItem="1E6-gy-IfQ" secondAttribute="centerX" id="6nJ-hZ-bji"/>
+                                            <constraint firstItem="YKI-vf-1xD" firstAttribute="centerX" secondItem="1E6-gy-IfQ" secondAttribute="centerX" id="7Zp-4d-6pM"/>
+                                            <constraint firstItem="6Kb-8S-w7x" firstAttribute="top" secondItem="eDP-m3-W7n" secondAttribute="bottom" constant="8" id="8aC-zv-a8B"/>
+                                            <constraint firstItem="jiJ-Z9-cNY" firstAttribute="top" secondItem="YKI-vf-1xD" secondAttribute="bottom" constant="8" id="I9r-NQ-Nez"/>
+                                            <constraint firstItem="ZYD-RA-Zg5" firstAttribute="top" secondItem="jiJ-Z9-cNY" secondAttribute="bottom" constant="8" id="MGm-HJ-upO"/>
+                                            <constraint firstItem="eDP-m3-W7n" firstAttribute="centerX" secondItem="1E6-gy-IfQ" secondAttribute="centerX" id="Ol7-5f-xp6"/>
+                                            <constraint firstItem="YKI-vf-1xD" firstAttribute="top" secondItem="6Kb-8S-w7x" secondAttribute="bottom" constant="8" id="VON-qV-mpc"/>
+                                            <constraint firstItem="M5b-6r-OD5" firstAttribute="centerX" secondItem="1E6-gy-IfQ" secondAttribute="centerX" id="Vgz-QS-Mo3"/>
+                                            <constraint firstItem="6Kb-8S-w7x" firstAttribute="centerX" secondItem="1E6-gy-IfQ" secondAttribute="centerX" id="Vhj-77-kqW"/>
+                                            <constraint firstItem="jiJ-Z9-cNY" firstAttribute="centerX" secondItem="1E6-gy-IfQ" secondAttribute="centerX" id="itG-qJ-nPh"/>
+                                            <constraint firstItem="JPT-e5-vpa" firstAttribute="top" secondItem="1E6-gy-IfQ" secondAttribute="top" constant="20" id="jJG-zk-pAv"/>
+                                            <constraint firstItem="eDP-m3-W7n" firstAttribute="top" secondItem="JPT-e5-vpa" secondAttribute="bottom" constant="8" id="uej-Tb-xwP"/>
+                                            <constraint firstItem="M5b-6r-OD5" firstAttribute="top" secondItem="ZYD-RA-Zg5" secondAttribute="bottom" constant="8" id="wch-gs-hnl"/>
+                                            <constraint firstItem="ZYD-RA-Zg5" firstAttribute="centerX" secondItem="1E6-gy-IfQ" secondAttribute="centerX" id="x7d-PY-co5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1E6-gy-IfQ" firstAttribute="top" secondItem="Lf5-50-kZP" secondAttribute="top" id="6lb-oY-dl7"/>
+                                    <constraint firstAttribute="bottom" secondItem="1E6-gy-IfQ" secondAttribute="bottom" id="J0s-8G-XNd"/>
+                                    <constraint firstItem="1E6-gy-IfQ" firstAttribute="width" secondItem="Lf5-50-kZP" secondAttribute="width" id="LkE-BN-OhR"/>
+                                    <constraint firstItem="1E6-gy-IfQ" firstAttribute="leading" secondItem="Lf5-50-kZP" secondAttribute="leading" id="nhA-bM-HAh"/>
+                                    <constraint firstAttribute="trailing" secondItem="1E6-gy-IfQ" secondAttribute="trailing" id="vFZ-CD-b9h"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wP8-ds-xGQ" firstAttribute="top" secondItem="Lf5-50-kZP" secondAttribute="bottom" constant="20" id="8Aq-x0-tnS"/>
+                            <constraint firstItem="LnY-BX-ypo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="ZIr-iX-fnc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LnY-BX-ypo" secondAttribute="trailing" id="jj8-ge-c52"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lf5-50-kZP" secondAttribute="trailing" id="m4J-1I-VIj"/>
+                            <constraint firstItem="Lf5-50-kZP" firstAttribute="top" secondItem="LnY-BX-ypo" secondAttribute="bottom" constant="20" id="ndq-aH-U3e"/>
+                            <constraint firstItem="Lf5-50-kZP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="t7M-OF-Iqc"/>
+                            <constraint firstItem="LnY-BX-ypo" firstAttribute="top" secondItem="fI3-p8-Swn" secondAttribute="bottom" constant="20" id="yv3-me-2pj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="onlyPictures" destination="LnY-BX-ypo" id="5Mu-2M-E7j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="117.39130434782609"/>
+        </scene>
+    </scenes>
+</document>

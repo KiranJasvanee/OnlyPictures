@@ -132,9 +132,9 @@ public class OnlyPictures: UIView {
             self.setCountTheme(font: self.fontForCount, textColor: self.textColorForCount)
         }
     }
-    public var isVisibleCount: Bool = true {
+    public var isHiddenVisibleCount: Bool = false {
         didSet {
-            if !self.isVisibleCount {
+            if self.isHiddenVisibleCount {
                 self.buttonCount?.removeFromSuperview()
             }
         }
@@ -185,18 +185,20 @@ public class OnlyPictures: UIView {
             if let visiblePictures = self.dataSource?.visiblePictures?(), visiblePictures > 0{
                 self.visiblePictures = visiblePictures
                 
-                var indexForStackviewOfImageView = 0
+                var indexForStackviewOfImageView: Int = 0
                 var indexStopeedAt = 0
-                
+                var isAppendPicturesStarted = false
                 
                 // Common nested function to be called from inside of .ascending/.descending choice made following this function.
                 func assignImages (index: Int){
-                    if self.stackviewOfImageViews.arrangedSubviews.indices.contains(indexForStackviewOfImageView) {
+                    print(indexForStackviewOfImageView)
+                    if self.stackviewOfImageViews.arrangedSubviews.indices.contains(indexForStackviewOfImageView) && !isAppendPicturesStarted{
                         
                         // Starting index can be anyone, whereas we requires stackview index to be starting from 0th only and to be incremented till stackview images available. That's why we requires different index for stackviewImageViews and actual index image to be filled up inside that imageView in stackview. 'Whereas in other case, where visible pictures are not accountable, index will be starting from 0th for both'
                         self.updateImageInStackviewOfImageViews(atIndex: indexForStackviewOfImageView, withPictureIndex: index)
                         indexForStackviewOfImageView += 1
                     }else{
+                        isAppendPicturesStarted = true
                         self.createAndAppendNewPicture(atIndex: index)
                     }
                 }
@@ -228,19 +230,24 @@ public class OnlyPictures: UIView {
                 self.setCountRuntimeFlexibility(count: self.picturesCount-self.visiblePictures) // Set updated count
                 self.removeAdditionalImageViewsInsideStackView(indexStopped: indexStopeedAt+1)  // Remove additional imageViews from self.stackviewOfImageViews
                 
+                // Reset layout
+                (self as? OnlyHorizontalPictures)?.resetLayoutBasedOnCurrentPropertyValues()
+                
             }else{
                 
                 var indexForStackviewOfImageView = 0
                 var indexStopeedAt = 0
+                var isAppendPicturesStarted = false
                 // up to new picture count.
                 
                 
                 // Common nested function to be called from inside of .ascending/.descending choice made following this function.
                 func assignImages(index: Int){
-                    if self.stackviewOfImageViews.arrangedSubviews.indices.contains(indexForStackviewOfImageView) {
+                    if self.stackviewOfImageViews.arrangedSubviews.indices.contains(indexForStackviewOfImageView) && !isAppendPicturesStarted{
                         self.updateImageInStackviewOfImageViews(atIndex: indexForStackviewOfImageView, withPictureIndex: index)
                         indexForStackviewOfImageView += 1
                     }else{
+                        isAppendPicturesStarted = true
                         self.createAndAppendNewPicture(atIndex: index)
                     }
                 }
@@ -261,6 +268,9 @@ public class OnlyPictures: UIView {
                     }
                 }
                 self.removeAdditionalImageViewsInsideStackView(indexStopped: indexStopeedAt+1) // Remove additional imageViews from self.stackviewOfImageViews
+                
+                // Reset layout
+                (self as? OnlyHorizontalPictures)?.resetLayoutBasedOnCurrentPropertyValues()
             }
         }
     }
@@ -379,7 +389,7 @@ internal extension OnlyPictures {
             self.delegate?.pictureViewCount?(value: self.picturesCount-self.visiblePictures)
             
             // If count visibility available, then continue.
-            if self.isVisibleCount {
+            if !self.isHiddenVisibleCount {
                 self.buttonCount = self.addCountCircle()
                 if self.isVisibleCountExists(){
                     self.setCountFlexibleWidthWith(self.picturesCount-self.visiblePictures)
@@ -580,7 +590,7 @@ extension OnlyPictures {
     func setCountRuntimeFlexibility(count: Int) {
         
         // self.isVisibleCount indicates, developer wants count, or he/she wants to handle count externally disregard this library. In this scenario this library sends count through delegate function -
-        guard self.isVisibleCount else {
+        guard !self.isHiddenVisibleCount else {
             self.setCountFlexibleWidthWith(count)
             return
         }
@@ -611,7 +621,7 @@ extension OnlyPictures {
         self.delegate?.pictureViewCount?(value: count)       // Send count value for external use.
         
         // self.isVisibleCount indicates, developer wants count, or he/she wants to handle count externally disregard this library. In this scenario this library sends count through delegate function -
-        guard self.isVisibleCount else {
+        guard !self.isHiddenVisibleCount else {
             return
         }
         

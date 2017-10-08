@@ -11,14 +11,14 @@ import Foundation
 import  UIKit
 
 
-enum InsertionAnimation {
+public enum InsertionAnimation {
     case none
     case fade
     case popup
     case scaleup
 }
 
-enum RemovationAnimation {
+public enum RemovationAnimation {
     case none
     case fade
     case popdown
