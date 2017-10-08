@@ -15,6 +15,30 @@
   <img src="promo/general/recent_right_with_gap_colorful.png"  style="width: 260px;" width="260" />
 </p>
 
+<p align="center">
+  <img src="promo/URL_images/URL_images_allocation.gif"  style="width: 220px;" width="220" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/append_and_reload_when_scroll.gif"  style="width: 280px;" width="280" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/append_and_reload_when_count.gif"  style="width: 260px;" width="260" />
+</p>
+
+<p align="center">
+  <img src="promo/Insert_and_remove/descending_work/insert_at_first_when_count.gif"  style="width: 220px;" width="220" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/insert_at_last_when_scrollable.gif"  style="width: 280px;" width="280" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/insert_at_specific_position_when_count.gif"  style="width: 260px;" width="260" />
+</p>
+
+<p align="center">
+  <img src="promo/Insert_and_remove/descending_work/remove_from_first_when_count.gif"  style="width: 220px;" width="220" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/remove_from_last_when_scrollable.gif"  style="width: 280px;" width="280" /> 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="promo/Insert_and_remove/descending_work/remove_from_specific_position_when_count.gif"  style="width: 260px;" width="260" />
+</p>
+
 
 
 <p align="center">
@@ -118,8 +142,9 @@ extension ViewController: OnlyPicturesDataSource {
         // Use 'index' to receive specific url from your collection. It's similar to indexPath.row in UITableView.
         let url = URL(string: self.pictures[index])
         
-        // Use any library to allocate your image from url to imageView. I've used SDWebImage here for downloading, assigning & caching.
-        imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
+        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")   // placeholder image
+        imageView.af_setImage(withURL: url!)                                     // Use any library to allocate your image from url to imageView. I've used SDWebImage here for downloading, assigning & caching.
+
     }
 }
 ```
@@ -220,9 +245,9 @@ onlyPictures.gap = 36
 ```
 
 ##### .spacing
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    `.spacing = 0` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     `.spacing = 2`     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   `.spacing = 4` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   `.spacing = 4` 
+&nbsp;&nbsp;&nbsp;    `.spacing = 0` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     `.spacing = 2`     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   `.spacing = 4` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   `.spacing = 4` 
 
-<img src="promo/spacing_property/spacing_0.png"  style="width: 180px;" width="180" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_2.png"  style="width: 200px;" width="200" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_4.png"  style="width: 220px;" width="220" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_4_with_white.png"  style="width: 220px;" width="220" />
+<img src="promo/spacing_property/spacing_0.png"  style="width: 160px;" width="160" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_2.png"  style="width: 180px;" width="180" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_4.png"  style="width: 200px;" width="200" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_4_with_white.png"  style="width: 200px;" width="200" />
 
 ```
 onlyPictures.spacing = 2
@@ -279,7 +304,80 @@ onlyPictures.fontForCount = UIFont(name: "HelveticaNeue", size: 18)!
 onlyPictures.isHiddenVisibleCount = true
 ```
 
-#### Things you can do additionally, Insert & Remove at First/Last/Specific-Position
+#### *Things you can do additionally, Insert & Remove at First/Last/Specific-Position*
+- NOTE: it's your responsibility to insert/remove image in your collection too, you used for pictures. It's similar pattern you follows using UITableView.
+
+##### Insert first in `.order = .descending`
+
+<img src="promo/Insert_and_remove/descending_work/insert_at_first_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/insert_at_first_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.insertFirst(image: UIImage(named: "p11"), withAnimation: .popup)
+```
+
+##### Insert last in `.order = .descending`
+<img src="promo/Insert_and_remove/descending_work/insert_at_last_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/insert_at_last_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.insertLast(image: UIImage(named: "p12"), withAnimation: .popup)
+```
+
+##### Insert at specific position in `.order = .descending`, below added at 2nd position
+<img src="promo/Insert_and_remove/descending_work/insert_at_specific_position_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/insert_at_specific_position_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.insertPicture(UIImage(named: "p12"), atIndex: 2, withAnimation: .popup)
+```
+
+##### Remove first in `.order = .descending`
+<img src="promo/Insert_and_remove/descending_work/remove_from_first_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/remove_from_first_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.removeFirst(withAnimation: .popdown)
+```
+
+##### Remove last in `.order = .descending`
+<img src="promo/Insert_and_remove/descending_work/remove_from_last_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/remove_from_last_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.removeLast(withAnimation: .popdown)
+```
+
+
+##### Remove from specific position in `.order = .descending`, below removed from 2nd position
+<img src="promo/Insert_and_remove/descending_work/remove_from_specific_position_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/remove_from_specific_position_when_scrollable.gif"  style="width: 260px;" width="260" /> 
+```
+onlyPictures.removePicture(atIndex: 2, withAnimation: .popdown)
+```
+
+##### *Let's check how insertion works with dynamic images. remove is same as above.*
+##### Insert first in `.order = .descending`
+<img src="promo/Insert_and_remove/URL_Images/insert_at_first.gif"  style="width: 260px;" width="260" />
+
+```
+let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
+onlyPictures.insertFirst(withAnimation: .popup) { (imageView) in
+        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+        imageView.af_setImage(withURL: url!)
+}
+```
+
+##### Insert last in `.order = .descending`
+<img src="promo/Insert_and_remove/URL_Images/insert_at_last.gif"  style="width: 260px;" width="260" />
+
+```
+let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
+onlyPictures.insertLast(withAnimation: .popup) { (imageView) in
+        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+        imageView.af_setImage(withURL: url!)
+}
+```
+
+##### Insert at specific position in `.order = .descending`, below added at 2nd position
+<img src="promo/Insert_and_remove/URL_Images/insert_at_specific_position.gif"  style="width: 260px;" width="260" />
+
+```
+let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
+onlyPictures.insertPicture(atIndex: 2, withAnimation: .popup) { (imageView) in
+        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+        imageView.af_setImage(withURL: url!)
+}
+```
 
 ### Author
 
