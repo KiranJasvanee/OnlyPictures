@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="promo/only_pictures.png"  style="width: 500px;" width="500" />
+</p>
 
 <p align="center">
   <img src="promo/general/recent_left_colorful.png"  style="width: 220px;" width="220" /> 
