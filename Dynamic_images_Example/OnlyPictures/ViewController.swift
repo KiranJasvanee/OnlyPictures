@@ -8,9 +8,11 @@
 
 import UIKit
 import OnlyPictures
-import SDWebImage
+import AlamofireImage
 
 class ViewController: UIViewController {
+    
+
 
     @IBOutlet weak var onlyPictures: OnlyHorizontalPictures!
     var pictures: [String]  = [
@@ -65,7 +67,8 @@ class ViewController: UIViewController {
         let url = URL(string: urlString)
         pictures.insert(urlString, at: 0)
         onlyPictures.insertFirst(withAnimation: .popup) { (imageView) in
-            imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
+            imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+            imageView.af_setImage(withURL: url!)
         }
     }
     @IBAction func insertLastActionListener(_ sender: Any) {
@@ -73,7 +76,8 @@ class ViewController: UIViewController {
         let url = URL(string: urlString)
         pictures.append(urlString)
         onlyPictures.insertLast(withAnimation: .popup) { (imageView) in
-            imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
+            imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+            imageView.af_setImage(withURL: url!)
         }
     }
     @IBAction func insertAt2ndPositionActionListener(_ sender: Any) {
@@ -82,7 +86,8 @@ class ViewController: UIViewController {
         let url = URL(string: urlString)
         pictures.insert(urlString, at: 2)
         onlyPictures.insertPicture(atIndex: 2, withAnimation: .popup) { (imageView) in
-            imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
+            imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+            imageView.af_setImage(withURL: url!)
         }
     }
     @IBAction func removeFirstActionListener(_ sender: Any) {
@@ -109,7 +114,8 @@ extension ViewController: OnlyPicturesDataSource {
     }
     func pictureViews(_ imageView: UIImageView, index: Int) {
         let url = URL(string: self.pictures[index])
-        imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
+        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+        imageView.af_setImage(withURL: url!)
     }
 }
 
