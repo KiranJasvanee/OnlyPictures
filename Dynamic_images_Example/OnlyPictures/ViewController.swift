@@ -8,11 +8,20 @@
 
 import UIKit
 import OnlyPictures
+import SDWebImage
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var onlyPictures: OnlyHorizontalPictures!
-    var pictures: [UIImage]  = [#imageLiteral(resourceName: "p1"),#imageLiteral(resourceName: "p2"),#imageLiteral(resourceName: "p3"),#imageLiteral(resourceName: "p4"),#imageLiteral(resourceName: "p5"),#imageLiteral(resourceName: "p6"),#imageLiteral(resourceName: "p7"),#imageLiteral(resourceName: "p8"),#imageLiteral(resourceName: "p9"),#imageLiteral(resourceName: "p10"),#imageLiteral(resourceName: "p11"),#imageLiteral(resourceName: "p12"),#imageLiteral(resourceName: "p13"),#imageLiteral(resourceName: "p14"),#imageLiteral(resourceName: "p15")]
+    var pictures: [String]  = [
+        "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/000/076/07f/0d01ca8.jpg",
+        "http://static3.businessinsider.com/image/51700e6b69beddc119000015/this-31-year-old-advisor-wants-to-change-the-way-young-people-invest.jpg",
+        "https://i.pinimg.com/736x/41/17/5b/41175b8393965fbac6d31e5b495065ee--pretty-people-beautiful-people.jpg",
+        "https://www.getaround.com/img/public/rent/owner_bruno.jpg",
+        "https://static.pexels.com/photos/355164/pexels-photo-355164.jpeg",
+        "https://onehdwallpaper.com/wp-content/uploads/2016/11/Beautiful-Girls-Photos-Free-For-Download.jpg",
+        "https://pbs.twimg.com/profile_images/1717956431/BP-headshot-fb-profile-photo_400x400.jpg"
+    ]
 
     
     override func viewDidLoad() {
@@ -43,28 +52,38 @@ class ViewController: UIViewController {
     }
 
     @IBAction func addMoreWithReloadActionListener(_ sender: Any) {
-        pictures.append(#imageLiteral(resourceName: "p7"))
-        pictures.append(#imageLiteral(resourceName: "p8"))
-        pictures.append(#imageLiteral(resourceName: "p9"))
-        pictures.append(#imageLiteral(resourceName: "p10"))
-        pictures.append(#imageLiteral(resourceName: "p11"))
-        pictures.append(#imageLiteral(resourceName: "p12"))
-        pictures.append(#imageLiteral(resourceName: "p13"))
-        pictures.append(#imageLiteral(resourceName: "p14"))
+        
+        pictures.append("http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
+        pictures.append("https://cdn.wallpapersafari.com/79/67/oUExzR.jpg")
+        pictures.append("http://steezo.com/wp-content/uploads/2012/12/man-in-suit2-300x223.jpg")
+        pictures.append("http://www.daymarkinteractive.com/wp-content/uploads/2014/04/35.jpg")
         self.onlyPictures.reloadData()
     }
     
     @IBAction func insertAtFirstActionListener(_ sender: Any) {
-        pictures.insert(#imageLiteral(resourceName: "p11"), at: 0)
-        onlyPictures.insertFirst(image: #imageLiteral(resourceName: "p11"), withAnimation: .popup)
+        let urlString = "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg"
+        let url = URL(string: urlString)
+        pictures.insert(urlString, at: 0)
+        onlyPictures.insertFirst(withAnimation: .popup) { (imageView) in
+            imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
+        }
     }
     @IBAction func insertLastActionListener(_ sender: Any) {
-        pictures.append(#imageLiteral(resourceName: "p12"))
-        onlyPictures.insertLast(image: #imageLiteral(resourceName: "p12"), withAnimation: .popup)
+        let urlString = "https://cdn.wallpapersafari.com/79/67/oUExzR.jpg"
+        let url = URL(string: urlString)
+        pictures.append(urlString)
+        onlyPictures.insertLast(withAnimation: .popup) { (imageView) in
+            imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
+        }
     }
     @IBAction func insertAt2ndPositionActionListener(_ sender: Any) {
-        pictures.insert(#imageLiteral(resourceName: "p13"), at: 2)
-        onlyPictures.insertPicture(#imageLiteral(resourceName: "p13"), atIndex: 2, withAnimation: .popup)
+        
+        let urlString = "https://cdn.wallpapersafari.com/79/67/oUExzR.jpg"
+        let url = URL(string: urlString)
+        pictures.insert(urlString, at: 2)
+        onlyPictures.insertPicture(atIndex: 2, withAnimation: .popup) { (imageView) in
+            imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
+        }
     }
     @IBAction func removeFirstActionListener(_ sender: Any) {
         pictures.removeFirst()
@@ -85,11 +104,12 @@ extension ViewController: OnlyPicturesDataSource {
     func numberOfPictures() -> Int {
         return self.pictures.count
     }
-//    func visiblePictures() -> Int {
-//        return 8
-//    }
-    func pictureViews(index: Int) -> UIImage {
-        return self.pictures[index]
+    func visiblePictures() -> Int {
+        return 8
+    }
+    func pictureViews(_ imageView: UIImageView, index: Int) {
+        let url = URL(string: self.pictures[index])
+        imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
     }
 }
 

@@ -280,7 +280,12 @@ public class OnlyPictures: UIView {
     private func updateImageInStackviewOfImageViews(atIndex indexOfStackviewImageView: Int, withPictureIndex indexOfPicture: Int){
         
         let imageView: OnlyPictureImageView? = self.stackviewOfImageViews.arrangedSubviews[indexOfStackviewImageView] as? OnlyPictureImageView
-        self.setImageInImageView(self.defaultPicture, inImageView: imageView!)
+        if let defaultPictureConfirmed = self.defaultPicture {
+            self.setImageInImageView(defaultPictureConfirmed, inImageView: imageView!)
+        }else{
+            imageView?.backgroundColor = UIColor.lightGray
+        }
+        
         
         if let image = self.dataSource?.pictureViews?(index: indexOfPicture) {
             if !__CGSizeEqualToSize(image.size, .zero){
@@ -325,10 +330,8 @@ public class OnlyPictures: UIView {
         }
     }
     
-    internal static var DEFAULT_PICTURE = #imageLiteral(resourceName: "p1")//UIImage(named: "user_default_picture.png")
-    public var defaultPicture: UIImage = OnlyPictures.DEFAULT_PICTURE {
+    public var defaultPicture: UIImage? = nil {
         didSet {
-            OnlyPictures.DEFAULT_PICTURE = self.defaultPicture
             self.setDefaultPicturesInAllImageViews()
         }
     }
@@ -424,7 +427,11 @@ internal extension OnlyPictures {
             pictureImageView.image = image
             pictureImageView.isDefaultPicture = false
         }else{
-            pictureImageView.image = self.defaultPicture
+            if let defaultPictureConfirmed = self.defaultPicture {
+                pictureImageView.image = defaultPictureConfirmed
+            }else{
+                pictureImageView.backgroundColor = UIColor.lightGray
+            }
         }
     }
     
@@ -487,7 +494,11 @@ internal extension OnlyPictures {
         imageview.widthAnchor.constraint(equalToConstant: SIZE_OF_IMAGEVIEWS).isActive = true
         imageview.makeBorderWithCornerRadius(radius: SIZE_OF_IMAGEVIEWS/2, borderColor: self.spacingColor, borderWidth: CGFloat(CGFloat(IMAGEVIEW_BORDERWIDTH)))
         imageview.isUserInteractionEnabled = true
-        imageview.image = self.defaultPicture
+        if let defaultPictureConfirmed = self.defaultPicture {
+            imageview.image = defaultPictureConfirmed
+        }else{
+            imageview.backgroundColor = UIColor.lightGray
+        }
         
         // add imageview tap gesture
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.pictureTapActionListener(recognizer:)))
@@ -562,7 +573,11 @@ internal extension OnlyPictures {
     func setDefaultPicturesInAllImageViews() {
         for imageView in listPictureImageViews {
             if imageView.isDefaultPicture {
-                imageView.image = self.defaultPicture
+                if let defaultPictureConfirmed = self.defaultPicture {
+                    imageView.image = defaultPictureConfirmed
+                }else{
+                    imageView.backgroundColor = UIColor.lightGray
+                }
             }
         }
     }

@@ -1,11 +1,10 @@
 use_frameworks!
 
 target 'OnlyPictures_Example' do
-  pod 'OnlyPictures', :path => '../'
-
-  target 'OnlyPictures_Tests' do
-    inherit! :search_paths
-
-    
-  end
+  	pod 'OnlyPictures', :path => '../'
+	pod ‘SDWebImage’
+	
+  	target 'OnlyPictures_Tests' do
+    		inherit! :search_paths
+ 	end
 end

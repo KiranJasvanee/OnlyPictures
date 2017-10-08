@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		082556858CF07F4D97F46DAA32C9AA2F /* OnlyPicturesAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C68741A3C8E53C57B1B91C003C7387 /* OnlyPicturesAnimations.swift */; };
+		082556858CF07F4D97F46DAA32C9AA2F /* OnlyPicturesAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3599316329B2FAF3F1C6EF5A645EE5 /* OnlyPicturesAnimations.swift */; };
 		10A4BCE8B00C575B8363B5DCCABBCE8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		180131621DAC10B7D34B605EFAC93747 /* OnlyHorizontalPictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2204F3811FE8107E09C1327DBA587EB /* OnlyHorizontalPictures.swift */; };
+		180131621DAC10B7D34B605EFAC93747 /* OnlyHorizontalPictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F74222892903626C0C8CE03A86517 /* OnlyHorizontalPictures.swift */; };
 		1CAB06B297EF53ABB69E908113611C64 /* Pods-OnlyPictures_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BA07827F1EFB8CE3E5A8BF8D711A83E /* Pods-OnlyPictures_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BC09956CF8093B9F133608C17EDFB57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		4FD8FB89B1CF5908B4AB6274CE7EC81F /* OnlyPictures-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C6C2818771672AAF2D509176AF516241 /* OnlyPictures-dummy.m */; };
-		582640642C671E62E07C921E2CB65CF5 /* OnlyPictures-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 529B1CE7C7C9007B810D46F8DD3C90B1 /* OnlyPictures-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5892BF530228FDF373FDE58534CC8C98 /* OnlyPictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BB4F09606F822EA404D55729920DC4 /* OnlyPictureImageView.swift */; };
+		4FD8FB89B1CF5908B4AB6274CE7EC81F /* OnlyPictures-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEF55B6A4D6F899369E9B3010CF6D04 /* OnlyPictures-dummy.m */; };
+		582640642C671E62E07C921E2CB65CF5 /* OnlyPictures-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9E8E40264BB16891B5842B62AEC54A7 /* OnlyPictures-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5892BF530228FDF373FDE58534CC8C98 /* OnlyPictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEB904A4FD59F9BE17C295D55C6A090 /* OnlyPictureImageView.swift */; };
 		6173EDC9179FF8B7F5EBA240FDE106AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		BB1600843886C3FEBDF50DCA0BC17439 /* OnlyPictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76ADF118B6449E2764DC846B30DDE80C /* OnlyPictures.swift */; };
+		BB1600843886C3FEBDF50DCA0BC17439 /* OnlyPictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F69370D252E86115CFFC397B6BF07 /* OnlyPictures.swift */; };
 		CCC628A125EF89628BD212B2F9AF32B9 /* Pods-OnlyPictures_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE666E65160250B0417519ECD933034E /* Pods-OnlyPictures_Example-dummy.m */; };
-		D62E73DE5EC52EF5B323CE111C79E24D /* OnlyPicturesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFB5930A4422898EC6ED932511662DC /* OnlyPicturesProtocol.swift */; };
+		D62E73DE5EC52EF5B323CE111C79E24D /* OnlyPicturesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63699F67F79B6F3BE1CAC9EBE9A6D9C2 /* OnlyPicturesProtocol.swift */; };
 		F25599C0C31DEA15A974380FE4A0F103 /* Pods-OnlyPictures_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DCBBDA55269C267D5FD8CEAF838719D4 /* Pods-OnlyPictures_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F85D64536317CE134D4E662BAC9B7A53 /* Pods-OnlyPictures_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA2273D148895C8A0C3615B08FAEF2D4 /* Pods-OnlyPictures_Tests-dummy.m */; };
 /* End PBXBuildFile section */
@@ -34,42 +34,42 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BEB904A4FD59F9BE17C295D55C6A090 /* OnlyPictureImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnlyPictureImageView.swift; path = OnlyPictures/Classes/OnlyPictureImageView.swift; sourceTree = "<group>"; };
 		0EFAA2B3FBB710D1BA422E3B4E5003AB /* Pods-OnlyPictures_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OnlyPictures_Tests-resources.sh"; sourceTree = "<group>"; };
 		121442E2701B128634D9C5517A2AC1D5 /* Pods-OnlyPictures_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OnlyPictures_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1A3599316329B2FAF3F1C6EF5A645EE5 /* OnlyPicturesAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnlyPicturesAnimations.swift; path = OnlyPictures/Classes/OnlyPicturesAnimations.swift; sourceTree = "<group>"; };
 		1BA07827F1EFB8CE3E5A8BF8D711A83E /* Pods-OnlyPictures_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OnlyPictures_Tests-umbrella.h"; sourceTree = "<group>"; };
 		254CE59701CBE4597B58774E1DB7A262 /* Pods_OnlyPictures_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OnlyPictures_Tests.framework; path = "Pods-OnlyPictures_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E43733679D4123852ED7AD2BD97CF75 /* OnlyPictures-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OnlyPictures-prefix.pch"; sourceTree = "<group>"; };
 		304F960973CA07177578598D0B3FF754 /* Pods-OnlyPictures_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OnlyPictures_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3FEF55B6A4D6F899369E9B3010CF6D04 /* OnlyPictures-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OnlyPictures-dummy.m"; sourceTree = "<group>"; };
 		401CA839D92887B38A15B53A1559CC2A /* Pods-OnlyPictures_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OnlyPictures_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		40E6751D60A8236F8B3F32EA8D0512AC /* Pods-OnlyPictures_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OnlyPictures_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		4577BF6E0382F810CDC4DDBF7C8971CB /* Pods-OnlyPictures_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OnlyPictures_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		47C68741A3C8E53C57B1B91C003C7387 /* OnlyPicturesAnimations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnlyPicturesAnimations.swift; path = OnlyPictures/Classes/OnlyPicturesAnimations.swift; sourceTree = "<group>"; };
-		48BB4F09606F822EA404D55729920DC4 /* OnlyPictureImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnlyPictureImageView.swift; path = OnlyPictures/Classes/OnlyPictureImageView.swift; sourceTree = "<group>"; };
-		529B1CE7C7C9007B810D46F8DD3C90B1 /* OnlyPictures-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OnlyPictures-umbrella.h"; sourceTree = "<group>"; };
 		539F8B484A5468B462C7F027F761F58B /* Pods-OnlyPictures_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OnlyPictures_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		63699F67F79B6F3BE1CAC9EBE9A6D9C2 /* OnlyPicturesProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnlyPicturesProtocol.swift; path = OnlyPictures/Classes/OnlyPicturesProtocol.swift; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		66BC183A1A5EF6A847D7E9A88ECFE21C /* Pods-OnlyPictures_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OnlyPictures_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		6A9F69370D252E86115CFFC397B6BF07 /* OnlyPictures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnlyPictures.swift; path = OnlyPictures/Classes/OnlyPictures.swift; sourceTree = "<group>"; };
 		6E1AA2F8F75521400CEEE1655C4F55E5 /* Pods-OnlyPictures_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OnlyPictures_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7101175673C6480833CA5C2D96AF851B /* Pods-OnlyPictures_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OnlyPictures_Example-resources.sh"; sourceTree = "<group>"; };
 		724629992F07E6CE6759DF550F66B9BB /* Pods-OnlyPictures_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-OnlyPictures_Tests.modulemap"; sourceTree = "<group>"; };
 		75B89D2B1AA883BD72721E4AC9D43413 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76ADF118B6449E2764DC846B30DDE80C /* OnlyPictures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnlyPictures.swift; path = OnlyPictures/Classes/OnlyPictures.swift; sourceTree = "<group>"; };
+		8F490F82E5261FA7234720FCA925B065 /* OnlyPictures.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OnlyPictures.xcconfig; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97BF9ADE6044CBD10D1D866245E406D7 /* OnlyPictures.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = OnlyPictures.modulemap; sourceTree = "<group>"; };
 		9AA7A8EA4445D0BA7040C9A25A7F76AB /* Pods-OnlyPictures_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-OnlyPictures_Example.modulemap"; sourceTree = "<group>"; };
-		A79416A26350407FCCC9CD8A85CAB694 /* OnlyPictures.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = OnlyPictures.modulemap; sourceTree = "<group>"; };
-		AA493540251E6AADA69B4FDFB5259C19 /* OnlyPictures-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OnlyPictures-prefix.pch"; sourceTree = "<group>"; };
+		9C084DAA108E78AB619F4C62B71A43AD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B66486C82E248917A3468AF67B93320A /* OnlyPictures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OnlyPictures.framework; path = OnlyPictures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE666E65160250B0417519ECD933034E /* Pods-OnlyPictures_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OnlyPictures_Example-dummy.m"; sourceTree = "<group>"; };
 		C152345D4E532752004FC5C1200BAEC0 /* Pods-OnlyPictures_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OnlyPictures_Example-frameworks.sh"; sourceTree = "<group>"; };
-		C2204F3811FE8107E09C1327DBA587EB /* OnlyHorizontalPictures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnlyHorizontalPictures.swift; path = OnlyPictures/Classes/OnlyHorizontalPictures.swift; sourceTree = "<group>"; };
-		C6C2818771672AAF2D509176AF516241 /* OnlyPictures-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OnlyPictures-dummy.m"; sourceTree = "<group>"; };
-		CBFB5930A4422898EC6ED932511662DC /* OnlyPicturesProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnlyPicturesProtocol.swift; path = OnlyPictures/Classes/OnlyPicturesProtocol.swift; sourceTree = "<group>"; };
-		CBFDFB38A36B304A0E3486D71A33925A /* OnlyPictures.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OnlyPictures.xcconfig; sourceTree = "<group>"; };
 		D48E0BBD7F7B549C923D69AC6CBC22CC /* Pods_OnlyPictures_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_OnlyPictures_Example.framework; path = "Pods-OnlyPictures_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91342455054512EE8E2954DB4FECA45 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA2273D148895C8A0C3615B08FAEF2D4 /* Pods-OnlyPictures_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OnlyPictures_Tests-dummy.m"; sourceTree = "<group>"; };
 		DCBBDA55269C267D5FD8CEAF838719D4 /* Pods-OnlyPictures_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OnlyPictures_Example-umbrella.h"; sourceTree = "<group>"; };
+		E9E8E40264BB16891B5842B62AEC54A7 /* OnlyPictures-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OnlyPictures-umbrella.h"; sourceTree = "<group>"; };
 		EB65E1B5ECD33798C08FA69707EE355D /* Pods-OnlyPictures_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OnlyPictures_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F754BD3DB6269D1250D93F47890AE9F4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD7F74222892903626C0C8CE03A86517 /* OnlyHorizontalPictures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OnlyHorizontalPictures.swift; path = OnlyPictures/Classes/OnlyHorizontalPictures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,26 +118,26 @@
 			path = "Target Support Files/Pods-OnlyPictures_Tests";
 			sourceTree = "<group>";
 		};
-		2B678977AE2C3D3FE0E87745B07E969B /* OnlyPictures */ = {
-			isa = PBXGroup;
-			children = (
-				C2204F3811FE8107E09C1327DBA587EB /* OnlyHorizontalPictures.swift */,
-				48BB4F09606F822EA404D55729920DC4 /* OnlyPictureImageView.swift */,
-				76ADF118B6449E2764DC846B30DDE80C /* OnlyPictures.swift */,
-				47C68741A3C8E53C57B1B91C003C7387 /* OnlyPicturesAnimations.swift */,
-				CBFB5930A4422898EC6ED932511662DC /* OnlyPicturesProtocol.swift */,
-				FE74B374F6432CD5F86936FE15A1D57F /* Support Files */,
-			);
-			name = OnlyPictures;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		51398666071FD6532129B3EF704F040D /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2B678977AE2C3D3FE0E87745B07E969B /* OnlyPictures */,
+				580692C206C24B3C112DF590168A30D1 /* OnlyPictures */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		580692C206C24B3C112DF590168A30D1 /* OnlyPictures */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F74222892903626C0C8CE03A86517 /* OnlyHorizontalPictures.swift */,
+				0BEB904A4FD59F9BE17C295D55C6A090 /* OnlyPictureImageView.swift */,
+				6A9F69370D252E86115CFFC397B6BF07 /* OnlyPictures.swift */,
+				1A3599316329B2FAF3F1C6EF5A645EE5 /* OnlyPicturesAnimations.swift */,
+				63699F67F79B6F3BE1CAC9EBE9A6D9C2 /* OnlyPicturesProtocol.swift */,
+				8931AD8EE6F32906B266246F4A7A4D15 /* Support Files */,
+			);
+			name = OnlyPictures;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -158,6 +158,20 @@
 				01EB41BBBE307708CDAC58A0B8AFC5DE /* Pods-OnlyPictures_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8931AD8EE6F32906B266246F4A7A4D15 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C084DAA108E78AB619F4C62B71A43AD /* Info.plist */,
+				97BF9ADE6044CBD10D1D866245E406D7 /* OnlyPictures.modulemap */,
+				8F490F82E5261FA7234720FCA925B065 /* OnlyPictures.xcconfig */,
+				3FEF55B6A4D6F899369E9B3010CF6D04 /* OnlyPictures-dummy.m */,
+				2E43733679D4123852ED7AD2BD97CF75 /* OnlyPictures-prefix.pch */,
+				E9E8E40264BB16891B5842B62AEC54A7 /* OnlyPictures-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Local_images_Example/Pods/Target Support Files/OnlyPictures";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -202,20 +216,6 @@
 			);
 			name = "Pods-OnlyPictures_Example";
 			path = "Target Support Files/Pods-OnlyPictures_Example";
-			sourceTree = "<group>";
-		};
-		FE74B374F6432CD5F86936FE15A1D57F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				F754BD3DB6269D1250D93F47890AE9F4 /* Info.plist */,
-				A79416A26350407FCCC9CD8A85CAB694 /* OnlyPictures.modulemap */,
-				CBFDFB38A36B304A0E3486D71A33925A /* OnlyPictures.xcconfig */,
-				C6C2818771672AAF2D509176AF516241 /* OnlyPictures-dummy.m */,
-				AA493540251E6AADA69B4FDFB5259C19 /* OnlyPictures-prefix.pch */,
-				529B1CE7C7C9007B810D46F8DD3C90B1 /* OnlyPictures-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/OnlyPictures";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,7 +372,7 @@
 /* Begin XCBuildConfiguration section */
 		1D390710CFBA20B5965BB35F7C9F5B3B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBFDFB38A36B304A0E3486D71A33925A /* OnlyPictures.xcconfig */;
+			baseConfigurationReference = 8F490F82E5261FA7234720FCA925B065 /* OnlyPictures.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -438,7 +438,7 @@
 		};
 		32284839D9A5A09F71AE5A7D2E4A2715 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBFDFB38A36B304A0E3486D71A33925A /* OnlyPictures.xcconfig */;
+			baseConfigurationReference = 8F490F82E5261FA7234720FCA925B065 /* OnlyPictures.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";

@@ -178,7 +178,7 @@ extension OnlyPictures: OnlyPictureInsertRemoveProtocol{
         }
     }
     
-    internal func insertPicture(atIndex index: Int, withAnimation animation: InsertionAnimation, ImageViewCallback: (UIImageView) -> ()){
+    public func insertPicture(atIndex index: Int, withAnimation animation: InsertionAnimation, ImageViewCallback: (UIImageView) -> ()){
         
         // When order is ascending, last comes recent. adding at last index, simply append it.
         // When order is descending, first comes recent. adding at first index, simply append it.
