@@ -99,12 +99,16 @@ extension ViewController: OnlyPicturesDataSource {
         return 6
     }
     
+    
     // ---------------------------------------------------
     // return the images you want to show. If you have URL strings, use next function instead of this.
+    // use .defaultPicture property to set placeholder image. This only work with local images. for dynamic images by URLs you can set placeholder image as I've shown in next function.
+    // onlyPictures.defaultPicture = #imageLiteral(resourceName: "defaultProfilePicture")
     
     func pictureViews(index: Int) -> UIImage {
         return pictures[index]
     }
+    
     
     // ---------------------------------------------------
     // If you do have URLs of images. Use below function to have UIImageView instance and index insted of 'pictureViews(index: Int) -> UIImage'
