@@ -143,6 +143,11 @@ extension ViewController: OnlyPicturesDelegate {
 }
 ```
 
+#### Reload
+
+##### `.reloadData()`
+- `reloadData()` will work similar to `UITableView -> reloadData()`, it will call `numberOfPictures()`, `pictureViews(index: Int)` & `pictureViews(index: Int)` again to reform pictures. 
+
 #### Properties
 
 ##### .order
@@ -257,6 +262,8 @@ onlyPictures.fontForCount = UIFont(name: "HelveticaNeue", size: 18)!
 ```
 onlyPictures.isHiddenVisibleCount = true
 ```
+
+#### Things you can do additionally, Insert & Remove at First/Last/Specific-Position
 
 ### Author
 
