@@ -100,10 +100,22 @@ extension ViewController: OnlyPicturesDataSource {
     }
     
     // ---------------------------------------------------
-    // return the images you want to show.
+    // return the images you want to show. If you have URL strings, use next function instead of this.
     
     func pictureViews(index: Int) -> UIImage {
         return pictures[index]
+    }
+    
+    // ---------------------------------------------------
+    // If you do have URLs of images. Use below function to have UIImageView instance and index insted of 'pictureViews(index: Int) -> UIImage'
+    // NOTE: It's your resposibility to assign any placeholder image till download & assignment completes.
+    
+    func pictureViews(_ imageView: UIImageView, index: Int) {   
+        // Use 'index' to receive specific url from your collection. It's similar to indexPath.row in UITableView.
+        let url = URL(string: self.pictures[index])
+        
+        // Use any library to allocate your image from url to imageView. I've used SDWebImage here for downloading, assigning & caching.
+        imageView.sd_setImage(with: url, placeholderImage: #imageLiteral(resourceName: "defaultProfilePicture"), options: .cacheMemoryOnly, completed: nil)
     }
 }
 ```
