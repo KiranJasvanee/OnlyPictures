@@ -347,7 +347,8 @@ onlyPictures.removePicture(atIndex: 2, withAnimation: .popdown)
 
 ##### Let's check how insertion works with dynamic images. remove is same as above.
 ##### Insert first in `.order = .descending`
-<img src="promo/Insert_and_remove/URL_Images/insert_at_first.gif"  style="width: 260px;" width="260" /> 
+<img src="promo/Insert_and_remove/URL_Images/insert_at_first.gif"  style="width: 260px;" width="260" />
+
 ```
 let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
 onlyPictures.insertFirst(withAnimation: .popup) { (imageView) in
@@ -357,7 +358,8 @@ onlyPictures.insertFirst(withAnimation: .popup) { (imageView) in
 ```
 
 ##### Insert last in `.order = .descending`
-<img src="promo/Insert_and_remove/URL_Images/insert_at_last.gif"  style="width: 260px;" width="260" /> 
+<img src="promo/Insert_and_remove/URL_Images/insert_at_last.gif"  style="width: 260px;" width="260" />
+
 ```
 let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
 onlyPictures.insertLast(withAnimation: .popup) { (imageView) in
@@ -367,7 +369,8 @@ onlyPictures.insertLast(withAnimation: .popup) { (imageView) in
 ```
 
 ##### Insert at specific position in `.order = .descending`, below added at 2nd position
-<img src="promo/Insert_and_remove/URL_Images/insert_at_specific_position.gif"  style="width: 260px;" width="260" /> 
+<img src="promo/Insert_and_remove/URL_Images/insert_at_specific_position.gif"  style="width: 260px;" width="260" />
+
 ```
 let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
 onlyPictures.insertPicture(atIndex: 2, withAnimation: .popup) { (imageView) in
