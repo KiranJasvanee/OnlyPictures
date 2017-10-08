@@ -114,7 +114,7 @@ extension ViewController: OnlyPicturesDataSource {
     }
     func pictureViews(_ imageView: UIImageView, index: Int) {
         let url = URL(string: self.pictures[index])
-        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
+        imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")      // placeholder image
         imageView.af_setImage(withURL: url!)
     }
 }
