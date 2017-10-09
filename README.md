@@ -2,7 +2,8 @@
   <img src="promo/onlyPictures/only_pictures1.png"  style="width: 500px;" width="500" />
 </p>
 
-
+<br />
+<br />
 
 <p align="center">
   <img src="promo/general/recent_left_colorful.png"  style="width: 220px;" width="220" /> 
@@ -44,7 +45,7 @@
   <img src="promo/Insert_and_remove/descending_work/remove_from_specific_position_when_count.gif"  style="width: 260px;" width="260" />
 </p>
 
-
+<br />
 
 <p align="center">
     <a href="https://twitter.com/Kiranjasvanee">
