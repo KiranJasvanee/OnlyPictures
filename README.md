@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="promo/only_pictures.png"  style="width: 500px;" width="500" />
+  <img src="promo/onlyPictures/onlyPictures.png"  style="width: 800px;" width="800" />
 </p>
 
 <p align="center">
