@@ -1,6 +1,8 @@
 <p align="center">
-  <img src="promo/onlyPictures/onlyPictures.png"  style="width: 800px;" width="800" />
+  <img src="promo/onlyPictures/only_pictures1.png"  style="width: 500px;" width="500" />
 </p>
+
+
 
 <p align="center">
   <img src="promo/general/recent_left_colorful.png"  style="width: 220px;" width="220" /> 
