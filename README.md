@@ -46,6 +46,7 @@
 </p>
 
 <br />
+<br />
 
 <p align="center">
     <a href="https://twitter.com/Kiranjasvanee">
@@ -91,6 +92,14 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'OnlyPictures'
 ```
+### Explaination & Live tracker.
+<p align="center">
+  <img src="promo/onlyPictures/live_tracker.gif"  style="width: 260px;" width="260" />
+</p>
+<p align="center">
+  <img src="promo/onlyPictures/explanation.png"  style="width: 500px;" width="300" />
+</p>
+
 
 ### Usage
 
