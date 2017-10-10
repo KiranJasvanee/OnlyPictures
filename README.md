@@ -404,8 +404,11 @@ onlyPictures.insertPicture(atIndex: 2, withAnimation: .popup) { (imageView) in
 ### Author
 
 Kiran Jasvanee,
+
 Skype - kiranjasvanee
+
 LinkedIn - https://www.linkedin.com/in/kiran-jasvanee-ab363778
+
 eMail -  kiran.jasvanee@gmail.com
 
 ### License
