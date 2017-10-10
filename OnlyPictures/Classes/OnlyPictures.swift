@@ -110,15 +110,13 @@ public class OnlyPictures: UIView {
 
     public var imageInPlaceOfCount: UIImage? = nil {
         didSet {
-            print("called A")
             if let image = self.imageInPlaceOfCount {
                 self.setCountImage(image)
             }
         }
     }
-    public var backgroundColorForCount: UIColor? = UIColor.lightGray {
+    public var backgroundColorForCount: UIColor? = UIColor.gray {
         didSet {
-            print("called B")
             self.buttonCount?.backgroundColor = self.backgroundColorForCount
         }
     }
