@@ -94,10 +94,10 @@ pod 'OnlyPictures'
 ```
 ### Explaination & Live tracker.
 <p align="center">
-  <img src="promo/onlyPictures/live_tracker.gif"  style="width: 260px;" width="260" />
+  <img src="promo/onlyPictures/live_tracker1.gif"  style="width: 260px;" width="260" />
 </p>
 <p align="center">
-  <img src="promo/onlyPictures/explanation.png"  style="width: 500px;" width="300" />
+  <img src="promo/onlyPictures/explanation.png"  style="width: 700px;" width="700" />
 </p>
 
 
