@@ -90,9 +90,9 @@ extension ViewController: OnlyPicturesDataSource {
     func numberOfPictures() -> Int {
         return self.pictures.count
     }
-//    func visiblePictures() -> Int {
-//        return 8
-//    }
+    func visiblePictures() -> Int {
+        return 6
+    }
     func pictureViews(index: Int) -> UIImage {
         return self.pictures[index]
     }
