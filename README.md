@@ -99,6 +99,12 @@ pod 'OnlyPictures'
 <p align="center">
   <img src="promo/onlyPictures/explanation.png"  style="width: 700px;" width="700" />
 </p>
+<p align="center">
+  
+```
+onlyPictures.order = .descending
+```
+</p>
 
 
 ### Usage
@@ -140,8 +146,8 @@ extension ViewController: OnlyPicturesDataSource {
     
     
     // ---------------------------------------------------
-    // return the images you want to show. If you have URL strings, use next function instead of this.
-    // use .defaultPicture property to set placeholder image. This only work with local images. for dynamic images by URLs you can set placeholder image as I've shown in next function.
+    // return the images you want to show. If you have URL's for images, use next function instead of this.
+    // use .defaultPicture property to set placeholder image. This only work with local images. for URL's images we provided imageView instance, it's your responsibility to assign placeholder image in it. Check next function.
     // onlyPictures.defaultPicture = #imageLiteral(resourceName: "defaultProfilePicture")
     
     func pictureViews(index: Int) -> UIImage {
@@ -153,12 +159,13 @@ extension ViewController: OnlyPicturesDataSource {
     // If you do have URLs of images. Use below function to have UIImageView instance and index insted of 'pictureViews(index: Int) -> UIImage'
     // NOTE: It's your resposibility to assign any placeholder image till download & assignment completes.
     
-    func pictureViews(_ imageView: UIImageView, index: Int) {   
+    func pictureViews(_ imageView: UIImageView, index: Int) { 
+    
         // Use 'index' to receive specific url from your collection. It's similar to indexPath.row in UITableView.
         let url = URL(string: self.pictures[index])
         
         imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")   // placeholder image
-        imageView.af_setImage(withURL: url!)                                     // Use any library to allocate your image from url to imageView. I've used SDWebImage here for downloading, assigning & caching.
+        imageView.af_setImage(withURL: url!)   // Use any library to allocate your image from url to imageView. I've used AlamofireImage here for async downloading, assigning & caching.
 
     }
 }
@@ -202,7 +209,7 @@ extension ViewController: OnlyPicturesDelegate {
 #### Reload
 
 ##### `.reloadData()`
-- `reloadData()` will work similar to `UITableView -> reloadData()`, it will call `numberOfPictures()`, `pictureViews(index: Int)` & `pictureViews(index: Int)` again to reform pictures. 
+- `reloadData()` will work similar to `UITableView -> reloadData()`, it will call `numberOfPictures()` & `pictureViews(index: Int)`/`pictureViews(_ imageView: UIImageView, index: Int)` again to reform pictures. 
 
 #### Properties
 
