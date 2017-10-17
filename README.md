@@ -101,7 +101,7 @@ pod 'OnlyPictures'
 </p>
 <p align="center">
   
-```
+```swift
 onlyPictures.order = .descending
 ```
 </p>
@@ -114,19 +114,19 @@ Add `UIView` in your outlet, select it and go to `Properties -> Identity Inspect
 <img src="promo/general/UIVIew_outlet.png"  style="width: 220px;" width="220" /> &nbsp;&nbsp;&nbsp;&nbsp; `->` &nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/general/identity_inspector_class_property_assignment.png"  style="width: 220px;" width="220" /> 
 
 Create `instance` of this outlet as below.
-```
+```swift
 @IBOutlet weak var onlyPictures: OnlyHorizontalPictures!
 ```
 
 Use `DataSource` for data assignment & `Delegate` to get indication of action performed in pictures.
-```
+```swift
 onlyPictures.dataSource = self
 onlyPictures.delegate = self
 ```
 
 #### DataSource Methods
 
-```
+```swift
 extension ViewController: OnlyPicturesDataSource {
 
     // ---------------------------------------------------
@@ -171,7 +171,7 @@ extension ViewController: OnlyPicturesDataSource {
 }
 ```
 #### Delegate Methods
-```
+```swift
 extension ViewController: OnlyPicturesDelegate {
     
     // ---------------------------------------------------
@@ -223,7 +223,7 @@ extension ViewController: OnlyPicturesDelegate {
 
 &nbsp;&nbsp;&nbsp; <img src="promo/order_property/ascending.png"  style="width: 160px;" width="180" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="promo/order_property/descending.png"  style="width: 180px;" width="180" /> 
 
-```
+```swift
 onlyPictures.order = .descending
 ```
 
@@ -232,7 +232,7 @@ onlyPictures.order = .descending
 
 &nbsp;&nbsp;&nbsp; <img src="promo/general/recent_left_colorful.png"  style="width: 160px;" width="180" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="promo/general/recent_right_colorful.png"  style="width: 180px;" width="180" /> 
 
-```
+```swift
 onlyPictures.recentAt = .left
 ```
 
@@ -242,7 +242,7 @@ onlyPictures.recentAt = .left
 
 <img src="promo/alignment_property/left.png"  style="width: 280px;" width="280" /> &nbsp; <img src="promo/alignment_property/center.png"  style="width: 280px;" width="280" /> &nbsp; <img src="promo/alignment_property/right.png"  style="width: 280px;" width="280" />
 
-```
+```swift
 onlyPictures.alignment = .left
 ```
 
@@ -252,7 +252,7 @@ onlyPictures.alignment = .left
 
 &nbsp;&nbsp;&nbsp; <img src="promo/general/recent_left_colorful.png"  style="width: 160px;" width="180" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <img src="promo/general/recent_right_colorful.png"  style="width: 180px;" width="180" /> 
 
-```
+```swift
 onlyPictures.countPosition = .right
 ```
 
@@ -262,7 +262,7 @@ onlyPictures.countPosition = .right
 
 &nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/gap_property/gap_20.png"  style="width: 120px;" width="120" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/gap_property/gap_36.png"  style="width: 180px;" width="180" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/gap_property/gap_50.png"  style="width: 220px;" width="220" />
 
-```
+```swift
 onlyPictures.gap = 36
 ```
 
@@ -271,7 +271,7 @@ onlyPictures.gap = 36
 
 <img src="promo/spacing_property/spacing_0.png"  style="width: 160px;" width="160" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_2.png"  style="width: 180px;" width="180" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_4.png"  style="width: 200px;" width="200" /> &nbsp;&nbsp; <img src="promo/spacing_property/spacing_4_with_white.png"  style="width: 200px;" width="200" />
 
-```
+```swift
 onlyPictures.spacing = 2
 ```
 
@@ -280,7 +280,7 @@ onlyPictures.spacing = 2
 
 <img src="promo/spacingColor_property/spacing_4_with_gray.png"  style="width: 220px;" width="220" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/spacingColor_property/spacing_4_with_white.png"  style="width: 220px;" width="220" />
 
-```
+```swift
 onlyPictures.spacingColor = UIColor.white
 ```
 
@@ -290,7 +290,7 @@ onlyPictures.spacingColor = UIColor.white
 
 <img src="promo/imageInPlaceOfCount_property/imageInPlaceOfCount_1.png"  style="width: 220px;" width="220" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/imageInPlaceOfCount_property/imageInPlaceOfCount_2.png"  style="width: 260px;" width="260" />
 
-```
+```swift
 onlyPictures.imageInPlaceOfCount = UIImage(named:"image_name")
 ```
 
@@ -300,7 +300,7 @@ onlyPictures.imageInPlaceOfCount = UIImage(named:"image_name")
 
 <img src="promo/backgroundColorForCount_property/backgroundColorForCount.png"  style="width: 220px;" width="220" /> 
 
-```
+```swift
 onlyPictures.backgroundColorForCount = .orange
 ```
 
@@ -308,7 +308,7 @@ onlyPictures.backgroundColorForCount = .orange
 
 <img src="promo/textColorForCount_property/textColorForCount.png"  style="width: 220px;" width="220" /> 
 
-```
+```swift
 onlyPictures.textColorForCount = .red
 ```
 
@@ -316,13 +316,13 @@ onlyPictures.textColorForCount = .red
 
 <img src="promo/fontForCount_property/fontForCount.png"  style="width: 220px;" width="220" /> 
 
-```
+```swift
 onlyPictures.fontForCount = UIFont(name: "HelveticaNeue", size: 18)!
 ```
 
 ##### .isHiddenVisibleCount
 - To hide count, set `.isHiddenVisibleCount = true`. But you can receive count in a following funtion of `OnlyPicturesDelegate` - `pictureViewCount(value: Int)`. 
-```
+```swift
 onlyPictures.isHiddenVisibleCount = true
 ```
 
@@ -332,38 +332,38 @@ onlyPictures.isHiddenVisibleCount = true
 ##### Insert first in `.order = .descending`
 
 <img src="promo/Insert_and_remove/descending_work/insert_at_first_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/insert_at_first_when_scrollable.gif"  style="width: 260px;" width="260" /> 
-```
+```swift
 onlyPictures.insertFirst(image: UIImage(named: "p11"), withAnimation: .popup)
 ```
 
 ##### Insert last in `.order = .descending`
 <img src="promo/Insert_and_remove/descending_work/insert_at_last_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/insert_at_last_when_scrollable.gif"  style="width: 260px;" width="260" /> 
-```
+```swift
 onlyPictures.insertLast(image: UIImage(named: "p12"), withAnimation: .popup)
 ```
 
 ##### Insert at specific position in `.order = .descending`, below added at 2nd position
 <img src="promo/Insert_and_remove/descending_work/insert_at_specific_position_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/insert_at_specific_position_when_scrollable.gif"  style="width: 260px;" width="260" /> 
-```
+```swift
 onlyPictures.insertPicture(UIImage(named: "p12"), atIndex: 2, withAnimation: .popup)
 ```
 
 ##### Remove first in `.order = .descending`
 <img src="promo/Insert_and_remove/descending_work/remove_from_first_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/remove_from_first_when_scrollable.gif"  style="width: 260px;" width="260" /> 
-```
+```swift
 onlyPictures.removeFirst(withAnimation: .popdown)
 ```
 
 ##### Remove last in `.order = .descending`
 <img src="promo/Insert_and_remove/descending_work/remove_from_last_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/remove_from_last_when_scrollable.gif"  style="width: 260px;" width="260" /> 
-```
+```swift
 onlyPictures.removeLast(withAnimation: .popdown)
 ```
 
 
 ##### Remove from specific position in `.order = .descending`, below removed from 2nd position
 <img src="promo/Insert_and_remove/descending_work/remove_from_specific_position_when_count.gif"  style="width: 260px;" width="260" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="promo/Insert_and_remove/descending_work/remove_from_specific_position_when_scrollable.gif"  style="width: 260px;" width="260" /> 
-```
+```swift
 onlyPictures.removePicture(atIndex: 2, withAnimation: .popdown)
 ```
 
@@ -371,7 +371,7 @@ onlyPictures.removePicture(atIndex: 2, withAnimation: .popdown)
 ##### Insert first in `.order = .descending`
 <img src="promo/Insert_and_remove/URL_Images/insert_at_first.gif"  style="width: 260px;" width="260" />
 
-```
+```swift
 let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
 onlyPictures.insertFirst(withAnimation: .popup) { (imageView) in
         imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
@@ -382,7 +382,7 @@ onlyPictures.insertFirst(withAnimation: .popup) { (imageView) in
 ##### Insert last in `.order = .descending`
 <img src="promo/Insert_and_remove/URL_Images/insert_at_last.gif"  style="width: 260px;" width="260" />
 
-```
+```swift
 let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
 onlyPictures.insertLast(withAnimation: .popup) { (imageView) in
         imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
@@ -393,7 +393,7 @@ onlyPictures.insertLast(withAnimation: .popup) { (imageView) in
 ##### Insert at specific position in `.order = .descending`, below added at 2nd position
 <img src="promo/Insert_and_remove/URL_Images/insert_at_specific_position.gif"  style="width: 260px;" width="260" />
 
-```
+```swift
 let url = URL(string: "http://insightstobehavior.com/wp-content/uploads/2017/08/testi-5.jpg")
 onlyPictures.insertPicture(atIndex: 2, withAnimation: .popup) { (imageView) in
         imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")
