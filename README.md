@@ -158,6 +158,7 @@ extension ViewController: OnlyPicturesDataSource {
     // ---------------------------------------------------
     // If you do have URLs of images. Use below function to have UIImageView instance and index insted of 'pictureViews(index: Int) -> UIImage'
     // NOTE: It's your resposibility to assign any placeholder image till download & assignment completes.
+    // Use any library to allocate your image from url to imageView. I've used AlamofireImage here for async downloading, assigning & caching.
     
     func pictureViews(_ imageView: UIImageView, index: Int) { 
     
@@ -165,8 +166,7 @@ extension ViewController: OnlyPicturesDataSource {
         let url = URL(string: self.pictures[index])
         
         imageView.image = #imageLiteral(resourceName: "defaultProfilePicture")   // placeholder image
-        imageView.af_setImage(withURL: url!)   // Use any library to allocate your image from url to imageView. I've used AlamofireImage here for async downloading, assigning & caching.
-
+        imageView.af_setImage(withURL: url!)   
     }
 }
 ```
