@@ -59,9 +59,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func insertAtFirstActionListener(_ sender: Any) {
-        pictures.insert(#imageLiteral(resourceName: "p11"), at: 0)
         onlyPictures.insertFirst(image: #imageLiteral(resourceName: "p11"), withAnimation: .popup)
-        
+        pictures.append(#imageLiteral(resourceName: "p12"))
     }
     @IBAction func insertLastActionListener(_ sender: Any) {
         pictures.append(#imageLiteral(resourceName: "p12"))
@@ -72,16 +71,16 @@ class ViewController: UIViewController {
         onlyPictures.insertPicture(#imageLiteral(resourceName: "p13"), atIndex: 2, withAnimation: .popup)
     }
     @IBAction func removeFirstActionListener(_ sender: Any) {
-        pictures.removeFirst()
         onlyPictures.removeFirst(withAnimation: .popdown)
+        pictures.removeFirst()      // Please do remove operations after does similar operations inside onlyPictures.
     }
     @IBAction func removeLastActionListener(_ sender: Any) {
-        pictures.removeLast()
         onlyPictures.removeLast(withAnimation: .popdown)
+        pictures.removeLast()       // Please do remove operations after does similar operations inside onlyPictures.
     }
     @IBAction func removeAt2ndPositionActionListener(_ sender: Any) {
-        pictures.remove(at: 2)
         onlyPictures.removePicture(atIndex: 2, withAnimation: .popdown)
+        pictures.remove(at: 2)      // Please do remove operations after does similar operations inside onlyPictures.
     }
 }
 

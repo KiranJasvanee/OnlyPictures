@@ -91,16 +91,16 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func removeFirstActionListener(_ sender: Any) {
-        pictures.removeFirst()
         onlyPictures.removeFirst(withAnimation: .popdown)
+        pictures.removeFirst()      // Please do remove operations after does similar operations inside onlyPictures.
     }
     @IBAction func removeLastActionListener(_ sender: Any) {
-        pictures.removeLast()
         onlyPictures.removeLast(withAnimation: .popdown)
+        pictures.removeLast()      // Please do remove operations after does similar operations inside onlyPictures.
     }
     @IBAction func removeAt2ndPositionActionListener(_ sender: Any) {
-        pictures.remove(at: 2)
         onlyPictures.removePicture(atIndex: 2, withAnimation: .popdown)
+        pictures.remove(at: 2)      // Please do remove operations after does similar operations inside onlyPictures.
     }
 }
 
