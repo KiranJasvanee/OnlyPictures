@@ -107,6 +107,7 @@ public class OnlyPictures: UIView {
     internal var visiblePictures: Int = 0
     
     internal var buttonCount: UIButton? = nil
+    internal var calculatedWidthOfCount: CGFloat = 0.0
 
     public var imageInPlaceOfCount: UIImage? = nil {
         didSet {
@@ -149,8 +150,6 @@ public class OnlyPictures: UIView {
     
     // Reload data -----------------------------------------------------
     public func reloadData(){
-        
-        self.superview?.layoutIfNeeded() // If there are anything related to superview constraints get updated with init of first picture.
         
         SIZE_OF_IMAGEVIEWS = self.bounds.size.height // Generic instance for ImageView size.
         
@@ -543,7 +542,8 @@ internal extension OnlyPictures {
         self.stackView.addArrangedSubview(buttonRemainingCount)
         
         buttonRemainingCount.heightAnchor.constraint(equalToConstant: SIZE_OF_IMAGEVIEWS).isActive = true
-        buttonRemainingCount.makeBorderWithCornerRadius(radius: SIZE_OF_IMAGEVIEWS/2, borderColor: self.spacingColor, borderWidth: CGFloat(CGFloat(IMAGEVIEW_BORDERWIDTH)))
+        self.calculatedWidthOfCount = SIZE_OF_IMAGEVIEWS    // default width of count.
+        self.buttonCount?.makeCountBorderWithCornerRadius(radius: SIZE_OF_IMAGEVIEWS/2, countWidth: SIZE_OF_IMAGEVIEWS, borderColor: self.spacingColor, borderWidth: CGFloat(CGFloat(IMAGEVIEW_BORDERWIDTH)))
         
         buttonRemainingCount.addTarget(self, action: #selector(self.tapActionListenerOfCount(sender:)), for: .touchUpInside)
         
@@ -651,15 +651,15 @@ extension OnlyPictures {
             let countForCountCircle = "+\(count)"
             self.buttonCount?.setTitle(countForCountCircle, for: .normal)
             let width = countForCountCircle.width(withConstrainedHeight: SIZE_OF_IMAGEVIEWS, font: self.fontForCount)
-            let caluclateWidth = (width+24)>SIZE_OF_IMAGEVIEWS ? (width+24) : SIZE_OF_IMAGEVIEWS
-            self.buttonCount?.widthAnchor.constraint(equalToConstant: caluclateWidth).isActive = true
+            self.calculatedWidthOfCount = (width+24)>SIZE_OF_IMAGEVIEWS ? (width+24) : SIZE_OF_IMAGEVIEWS
+            self.buttonCount?.widthAnchor.constraint(equalToConstant: self.calculatedWidthOfCount).isActive = true
 
             // custom colors if developer set for count circle.
             self.buttonCount?.backgroundColor = self.backgroundColorForCount
             self.buttonCount?.setTitleColor(self.textColorForCount, for: .normal)
         }
         
-        self.buttonCount?.makeBorderWithCornerRadius(radius: SIZE_OF_IMAGEVIEWS/2, borderColor: self.spacingColor, borderWidth: CGFloat(CGFloat(IMAGEVIEW_BORDERWIDTH)))
+        self.buttonCount?.makeCountBorderWithCornerRadius(radius: SIZE_OF_IMAGEVIEWS/2, countWidth: self.calculatedWidthOfCount, borderColor: self.spacingColor, borderWidth: CGFloat(CGFloat(IMAGEVIEW_BORDERWIDTH)))
     }
 }
 
@@ -699,7 +699,7 @@ internal extension OnlyPictures {
         for imageView in listPictureImageViews {
             imageView.makeBorderWithCornerRadius(radius: SIZE_OF_IMAGEVIEWS/2, borderColor: self.spacingColor, borderWidth: CGFloat(width))
         }
-        self.buttonCount?.makeBorderWithCornerRadius(radius: SIZE_OF_IMAGEVIEWS/2, borderColor: self.spacingColor, borderWidth: CGFloat(width))   // If button will be there, if will apply border width to it.
+        self.buttonCount?.makeCountBorderWithCornerRadius(radius: SIZE_OF_IMAGEVIEWS/2, countWidth: self.calculatedWidthOfCount, borderColor: self.spacingColor, borderWidth: CGFloat(width))   // If button will be there, if will apply border width to it.
     }
 }
 
@@ -774,9 +774,17 @@ extension UIView: CornerRadius {
     
     func makeBorderWithCornerRadius(radius: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
         
-        self.layoutIfNeeded()
-        let rect = self.bounds;
+        let rect = CGRect.init(x: 0, y: 0, width: SIZE_OF_IMAGEVIEWS, height: SIZE_OF_IMAGEVIEWS)
+        self.createBorderMark(rect: rect, radius: radius, borderColor: borderColor, borderWidth: borderWidth)
+    }
+    
+    func makeCountBorderWithCornerRadius(radius: CGFloat, countWidth: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
         
+        let rect = CGRect.init(x: 0, y: 0, width: countWidth, height: SIZE_OF_IMAGEVIEWS)
+        self.createBorderMark(rect: rect, radius: radius, borderColor: borderColor, borderWidth: borderWidth)
+    }
+    
+    func createBorderMark(rect: CGRect, radius: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: rect, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: radius, height: radius))
         
         // Create the shape layer and set its path

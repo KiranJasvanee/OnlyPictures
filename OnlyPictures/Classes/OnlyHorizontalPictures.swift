@@ -132,11 +132,11 @@ public class OnlyHorizontalPictures: OnlyPictures {
         }
     }
     func checkSupperViewRunningOutOfBounds() -> Bool{
+        
         /*
          If stackview width size greater than super (OnlyPictures) bounds size, it indicates scrollview content size shoulbe be activated.
          Activate it by replacing constraints of scrollview.
          */
-        self.layoutIfNeeded()
         if self.stackView.bounds.size.width >= self.bounds.size.width {
             return true
         }else{
