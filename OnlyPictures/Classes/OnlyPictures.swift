@@ -15,6 +15,7 @@ private var SIZE_OF_IMAGEVIEWS: CGFloat = 0.0
 @objc public protocol OnlyPicturesDataSource {
     func numberOfPictures() -> Int
     @objc optional func visiblePictures() -> Int
+    @objc optional func remainingCountValue() -> Int
     @objc optional func pictureViews(index: Int) -> UIImage
     @objc optional func pictureViews(_ imageView: UIImageView, index: Int)
 }
@@ -39,6 +40,7 @@ public class OnlyPictures: UIView {
     internal var scrollView: UIScrollView = UIScrollView()              // scrollview of images.
     internal var stackView: UIStackView = UIStackView()                 // Stackview holds this imageViews & count
     internal var stackviewOfImageViews: UIStackView = UIStackView()     // Stackview holds this images in imageViews
+    
     
     // Delegate
     public var dataSource: OnlyPicturesDataSource? = nil {
@@ -105,6 +107,7 @@ public class OnlyPictures: UIView {
     // Count -----------------------------------------------------------
     internal var picturesCount: Int = 0
     internal var visiblePictures: Int = 0
+    internal var remainingManualCount: Int = 0
     
     internal var buttonCount: UIButton? = nil
     internal var calculatedWidthOfCount: CGFloat = 0.0
@@ -162,14 +165,23 @@ public class OnlyPictures: UIView {
         if self.listPictureImageViews.count == 0 {
             
             var isCountRequired = false
-            // Visible picture logic --------------------------
-            if let visiblePictures = self.dataSource?.visiblePictures?(), visiblePictures > 0{
-                self.visiblePictures = visiblePictures
-
+            
+            func setRemainingCountToBeShown(visiblePicturesCount: Int){
+                self.visiblePictures = visiblePicturesCount
+                
                 // If pictureCount is less or equal to visiblePictures, walk up to pictureCount OR we will need a count
-                if self.picturesCount > visiblePictures  {
+                if self.picturesCount >= visiblePictures  {
                     isCountRequired = true
                 }
+            }
+            
+            // Visible picture logic --------------------------
+            if let remainingCountValueHolder = self.dataSource?.remainingCountValue?(), remainingCountValueHolder >= 0{
+                self.remainingManualCount = remainingCountValueHolder
+                // This criteria required when there are remaining count in millions
+                setRemainingCountToBeShown(visiblePicturesCount: picturesCount) // if remaining count provided manually, we don't need visible pictures to work upon.
+            }else if let visiblePictures = self.dataSource?.visiblePictures?(), visiblePictures > 0{
+                setRemainingCountToBeShown(visiblePicturesCount: visiblePictures)
             }
             // ------------------------------------------------
 
@@ -179,8 +191,9 @@ public class OnlyPictures: UIView {
             
             // reload in existing ImageViews --------------------------
             
-            if let visiblePictures = self.dataSource?.visiblePictures?(), visiblePictures > 0{
-                self.visiblePictures = visiblePictures
+            // Nested function
+            func reloadBasedOnRemainingCountToBeShown(visiblePicturesCount: Int){
+                self.visiblePictures = visiblePicturesCount
                 
                 var indexForStackviewOfImageView: Int = 0
                 var indexStopeedAt = 0
@@ -229,7 +242,14 @@ public class OnlyPictures: UIView {
                 
                 // Reset layout
                 (self as? OnlyHorizontalPictures)?.resetLayoutBasedOnCurrentPropertyValues()
-                
+            }
+            
+            if let remainingCountValueHolder = self.dataSource?.remainingCountValue?(), remainingCountValueHolder >= 0{
+                self.remainingManualCount = remainingCountValueHolder
+                // This criteria required when there are remaining count in millions
+                reloadBasedOnRemainingCountToBeShown(visiblePicturesCount: self.picturesCount) // if remaining count provided manually, we don't need visible pictures to work upon.
+            }else if let visiblePictures = self.dataSource?.visiblePictures?(), visiblePictures > 0{
+                reloadBasedOnRemainingCountToBeShown(visiblePicturesCount: visiblePictures)
             }else{
                 
                 var indexForStackviewOfImageView = 0
@@ -353,7 +373,13 @@ public class OnlyPictures: UIView {
 internal extension OnlyPictures {
     
     func isVisibleCountExists() -> Bool {
-        return self.visiblePictures != 0
+        if let remainingCountValueHolder = self.dataSource?.remainingCountValue?(), remainingCountValueHolder >= 0{
+            return true
+        }else if let visiblePictures = self.dataSource?.visiblePictures?(), visiblePictures > 0{
+            return true
+        }else{
+            return false
+        }
     }
     
     func initPicturesLayout(_ isCountRequired: Bool) {
@@ -385,16 +411,8 @@ internal extension OnlyPictures {
         
         // if we requires to add count
         if isCountRequired {
-            
-            self.delegate?.pictureViewCount?(value: self.picturesCount-self.visiblePictures)
-            
             // If count visibility available, then continue.
-            if !self.isHiddenVisibleCount {
-                self.buttonCount = self.addCountCircle()
-                if self.isVisibleCountExists(){
-                    self.setCountFlexibleWidthWith(self.picturesCount-self.visiblePictures)
-                }
-            }
+            self.setCountRuntimeFlexibility(count: self.picturesCount-self.visiblePictures)
         }
         
         
@@ -595,17 +613,31 @@ internal extension OnlyPictures {
 
 extension OnlyPictures {
     fileprivate func setCountTheme(font: UIFont, textColor: UIColor) {
-        
         if self.isVisibleCountExists() {
             self.setCountRuntimeFlexibility(count: self.picturesCount-self.visiblePictures)
         }
     }
     func setCountRuntimeFlexibility(count: Int) {
         
+        var count = count // make parameter mutable.
+        
+        // if there are no images in stack, don't just show remaining count
+        guard self.stackviewOfImageViews.arrangedSubviews.count > 0 else{
+            return
+        }
+        
+        guard self.isVisibleCountExists() else{
+            return
+        }
+        
         // self.isVisibleCount indicates, developer wants count, or he/she wants to handle count externally disregard this library. In this scenario this library sends count through delegate function -
         guard !self.isHiddenVisibleCount else {
             self.setCountFlexibleWidthWith(count)
             return
+        }
+        
+        if let remainingCountValueHolder = self.dataSource?.remainingCountValue?(), remainingCountValueHolder >= 0{
+            count = remainingCountValueHolder
         }
         
         // button is already available, and count is greater than 0.
@@ -631,9 +663,8 @@ extension OnlyPictures {
     
     func setCountFlexibleWidthWith(_ count: Int){
         
+        // self.isVisibleCount indicates, developer wants count, or he/she wants to handle count externally disregard to this library. In this scenario this library sends count through delegate function -
         self.delegate?.pictureViewCount?(value: count)       // Send count value for external use.
-        
-        // self.isVisibleCount indicates, developer wants count, or he/she wants to handle count externally disregard this library. In this scenario this library sends count through delegate function -
         guard !self.isHiddenVisibleCount else {
             return
         }

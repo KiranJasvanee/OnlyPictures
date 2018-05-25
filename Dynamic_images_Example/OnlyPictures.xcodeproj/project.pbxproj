@@ -15,6 +15,8 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7659D66F23949DD359A10872 /* Pods_OnlyPictures_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45CAD8CBD027195D486733E4 /* Pods_OnlyPictures_Tests.framework */; };
 		B55CBA92E9B27E320ED6E67D /* Pods_OnlyPictures_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0A8BA197CC287ABB8CC891 /* Pods_OnlyPictures_Example.framework */; };
+		DDDA07FA20B7E59500276386 /* WebImageLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA07F920B7E59500276386 /* WebImageLoaderViewController.swift */; };
+		DDDA07FC20B80C4600276386 /* WebImageLoaderManualCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA07FB20B80C4600276386 /* WebImageLoaderManualCountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		9AC748F72F51FADBDF6C7401 /* Pods-OnlyPictures_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlyPictures_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OnlyPictures_Tests/Pods-OnlyPictures_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		DDDA07F920B7E59500276386 /* WebImageLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageLoaderViewController.swift; sourceTree = "<group>"; };
+		DDDA07FB20B80C4600276386 /* WebImageLoaderManualCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImageLoaderManualCountViewController.swift; sourceTree = "<group>"; };
 		DF0A8BA197CC287ABB8CC891 /* Pods_OnlyPictures_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlyPictures_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F695F4D79D35B3575FB2B56C /* OnlyPictures.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OnlyPictures.podspec; path = ../OnlyPictures.podspec; sourceTree = "<group>"; };
 		F70DAA4EC7D4B06E5F5F0EFA /* Pods-OnlyPictures_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlyPictures_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnlyPictures_Tests/Pods-OnlyPictures_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 		607FACD21AFB9204008FA782 /* Example for OnlyPictures */ = {
 			isa = PBXGroup;
 			children = (
+				DDDA07F620B7E50700276386 /* Controllers */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -157,6 +162,15 @@
 				45CAD8CBD027195D486733E4 /* Pods_OnlyPictures_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDDA07F620B7E50700276386 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDDA07F920B7E59500276386 /* WebImageLoaderViewController.swift */,
+				DDDA07FB20B80C4600276386 /* WebImageLoaderManualCountViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +389,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				DDDA07FA20B7E59500276386 /* WebImageLoaderViewController.swift in Sources */,
+				DDDA07FC20B80C4600276386 /* WebImageLoaderManualCountViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
