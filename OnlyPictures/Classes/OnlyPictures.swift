@@ -13,17 +13,17 @@ private var IMAGEVIEW_BORDERWIDTH = 2.0
 private var SIZE_OF_IMAGEVIEWS: CGFloat = 0.0
 
 @objc public protocol OnlyPicturesDataSource {
-    func numberOfPictures() -> Int
-    @objc optional func visiblePictures() -> Int
-    @objc optional func pictureViews(index: Int) -> UIImage
-    @objc optional func pictureViews(_ imageView: UIImageView, index: Int)
+    func numberOfPictures(onlyPictureView: OnlyPictures) -> Int
+    @objc optional func visiblePictures(onlyPictureView: OnlyPictures) -> Int
+    @objc optional func pictureViews(onlyPictureView: OnlyPictures, index: Int) -> UIImage
+    @objc optional func pictureViews(onlyPictureView: OnlyPictures, _ imageView: UIImageView, index: Int)
 }
 
 @objc public protocol OnlyPicturesDelegate {
-    func pictureView(_ imageView: UIImageView, didSelectAt index: Int)
-    @objc optional func pictureViewCountDidSelect()
-    @objc optional func pictureViewCount(value: Int)
-    @objc optional func pictureViewDidSelect()
+    func pictureView(onlyPictureView: OnlyPictures, _ imageView: UIImageView, didSelectAt index: Int)
+    @objc optional func pictureViewCountDidSelect(onlyPictureView: OnlyPictures)
+    @objc optional func pictureViewCount(onlyPictureView: OnlyPictures, value: Int)
+    @objc optional func pictureViewDidSelect(onlyPictureView: OnlyPictures)
 }
 
 public enum ListOrder {
@@ -53,7 +53,7 @@ public class OnlyPictures: UIView {
     }
     public var delegate: OnlyPicturesDelegate? = nil {
         didSet {
-            self.delegate?.pictureViewCount?(value: self.picturesCount-self.visiblePictures)
+            self.delegate?.pictureViewCount?(onlyPictureView: self, value: self.picturesCount-self.visiblePictures)
         }
     }
     
@@ -153,7 +153,7 @@ public class OnlyPictures: UIView {
         
         SIZE_OF_IMAGEVIEWS = self.bounds.size.height // Generic instance for ImageView size.
         
-        guard let picturesCount: Int = self.dataSource?.numberOfPictures(), picturesCount != 0 else{
+        guard let picturesCount: Int = self.dataSource?.numberOfPictures(onlyPictureView: self), picturesCount != 0 else{
             return
         }
         self.picturesCount = picturesCount  // assign new pictures count to pictureCount
@@ -163,7 +163,7 @@ public class OnlyPictures: UIView {
             
             var isCountRequired = false
             // Visible picture logic --------------------------
-            if let visiblePictures = self.dataSource?.visiblePictures?(), visiblePictures > 0{
+            if let visiblePictures = self.dataSource?.visiblePictures?(onlyPictureView: self), visiblePictures > 0{
                 self.visiblePictures = visiblePictures
 
                 // If pictureCount is less or equal to visiblePictures, walk up to pictureCount OR we will need a count
@@ -179,7 +179,7 @@ public class OnlyPictures: UIView {
             
             // reload in existing ImageViews --------------------------
             
-            if let visiblePictures = self.dataSource?.visiblePictures?(), visiblePictures > 0{
+            if let visiblePictures = self.dataSource?.visiblePictures?(onlyPictureView: self), visiblePictures > 0{
                 self.visiblePictures = visiblePictures
                 
                 var indexForStackviewOfImageView: Int = 0
@@ -284,14 +284,14 @@ public class OnlyPictures: UIView {
         }
         
         
-        if let image = self.dataSource?.pictureViews?(index: indexOfPicture) {
+        if let image = self.dataSource?.pictureViews?(onlyPictureView: self, index: indexOfPicture) {
             if !__CGSizeEqualToSize(image.size, .zero){
                 imageView?.image = image
             }
         }
         
         // If picture set inside 'pictureViews(_ imageView: UIImageView, index: Int)' by developer himself/herself.
-        self.dataSource?.pictureViews?(imageView!, index: indexOfPicture)
+        self.dataSource?.pictureViews?(onlyPictureView: self, imageView!, index: indexOfPicture)
     }
     
     private func removeAdditionalImageViewsInsideStackView(indexStopped: Int){
@@ -386,7 +386,7 @@ internal extension OnlyPictures {
         // if we requires to add count
         if isCountRequired {
             
-            self.delegate?.pictureViewCount?(value: self.picturesCount-self.visiblePictures)
+            self.delegate?.pictureViewCount?(onlyPictureView: self, value: self.picturesCount-self.visiblePictures)
             
             // If count visibility available, then continue.
             if !self.isHiddenVisibleCount {
@@ -411,12 +411,12 @@ internal extension OnlyPictures {
         self.listPictureImageViews.append(pictureImageView)
         
         // If picture in UIImage format sent by 'pictureViews(index: Int) -> UIImage'
-        if let image = self.dataSource?.pictureViews?(index: index) {
+        if let image = self.dataSource?.pictureViews?(onlyPictureView: self, index: index) {
             self.setImageInImageView(image, inImageView: pictureImageView)
         }
         
         // If picture set inside 'pictureViews(_ imageView: UIImageView, index: Int)' by developer himself/herself.
-        self.dataSource?.pictureViews?(pictureImageView, index: index)
+        self.dataSource?.pictureViews?(onlyPictureView: self, pictureImageView, index: index)
     }
     
     func setImageInImageView(_ image: UIImage, inImageView pictureImageView: OnlyPictureImageView) {
@@ -524,12 +524,12 @@ internal extension OnlyPictures {
     @objc private func pictureTapActionListener(recognizer: UITapGestureRecognizer){
         if let imageviewTapped = recognizer.view as? UIImageView {
             if let index = self.stackviewOfImageViews.arrangedSubviews.index(of: imageviewTapped) {
-                self.delegate?.pictureView(imageviewTapped, didSelectAt: index)
+                self.delegate?.pictureView(onlyPictureView: self, imageviewTapped, didSelectAt: index)
             }
         }
         
         // generic tap called
-        self.delegate?.pictureViewDidSelect?()
+        self.delegate?.pictureViewDidSelect?(onlyPictureView: self)
     }
     
     func addCountCircle() -> UIButton{
@@ -552,10 +552,10 @@ internal extension OnlyPictures {
     
     @objc private func tapActionListenerOfCount(sender: UIButton) {
         
-        self.delegate?.pictureViewCountDidSelect?()
+        self.delegate?.pictureViewCountDidSelect?(onlyPictureView: self)
         
         // generic tap called
-        self.delegate?.pictureViewDidSelect?()
+        self.delegate?.pictureViewDidSelect?(onlyPictureView: self)
     }
 }
 
@@ -631,7 +631,7 @@ extension OnlyPictures {
     
     func setCountFlexibleWidthWith(_ count: Int){
         
-        self.delegate?.pictureViewCount?(value: count)       // Send count value for external use.
+        self.delegate?.pictureViewCount?(onlyPictureView: self, value: count)       // Send count value for external use.
         
         // self.isVisibleCount indicates, developer wants count, or he/she wants to handle count externally disregard this library. In this scenario this library sends count through delegate function -
         guard !self.isHiddenVisibleCount else {

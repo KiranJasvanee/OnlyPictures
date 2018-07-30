@@ -287,7 +287,7 @@ extension OnlyPictures: OnlyPictureInsertRemoveProtocol{
         self.picturesCount += 1 // Increase picture count.
         
         // If visible pictures are there, add it run time.
-        if let _ = self.dataSource?.visiblePictures?() {
+        if let _ = self.dataSource?.visiblePictures?(onlyPictureView: self) {
             
             
             // If total picturesCount are more than visiblePictures
@@ -487,12 +487,12 @@ extension OnlyPictures{
                 self.listPictureImageViews.insert(pictureImageView, at: 0)
                 
                 
-                if let image = self.dataSource?.pictureViews?(index: startingPosition) {
+                if let image = self.dataSource?.pictureViews?(onlyPictureView: self, index: startingPosition) {
                     self.setImageInImageView(image, inImageView: pictureImageView)
                 }
                 
                 // If picture set inside 'pictureViews(_ imageView: UIImageView, index: Int)' by developer himself/herself.
-                self.dataSource?.pictureViews?(pictureImageView, index: startingPosition)
+                self.dataSource?.pictureViews?(onlyPictureView: self, pictureImageView, index: startingPosition)
                 
                 // Up onwards imageview after insertion position.
                 for indexOfUpward in stride(from: 1, to: self.listPictureImageViews.count, by: 1) {
