@@ -188,7 +188,6 @@ public class OnlyPictures: UIView {
                 
                 // Common nested function to be called from inside of .ascending/.descending choice made following this function.
                 func assignImages (index: Int){
-                    print(indexForStackviewOfImageView)
                     if self.stackviewOfImageViews.arrangedSubviews.indices.contains(indexForStackviewOfImageView) && !isAppendPicturesStarted{
                         
                         // Starting index can be anyone, whereas we requires stackview index to be starting from 0th only and to be incremented till stackview images available. That's why we requires different index for stackviewImageViews and actual index image to be filled up inside that imageView in stackview. 'Whereas in other case, where visible pictures are not accountable, index will be starting from 0th for both'
