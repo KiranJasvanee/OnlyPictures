@@ -1,5 +1,5 @@
 PODS:
-  - OnlyPictures (0.1.0)
+  - OnlyPictures (1.0.0)
 
 DEPENDENCIES:
   - OnlyPictures (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  OnlyPictures: 65d4fe1585b436739f111293aa391fd015385a6a
+  OnlyPictures: a91e5b202783fb3a36d4e2f1899d400a22b26259
 
 PODFILE CHECKSUM: be6c5546168bcdc866747ffe4dc8c4060690def4
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.6.1

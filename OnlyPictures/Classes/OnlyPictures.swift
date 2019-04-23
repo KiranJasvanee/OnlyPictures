@@ -522,7 +522,7 @@ internal extension OnlyPictures {
     
     @objc private func pictureTapActionListener(recognizer: UITapGestureRecognizer){
         if let imageviewTapped = recognizer.view as? UIImageView {
-            if let index = self.stackviewOfImageViews.arrangedSubviews.index(of: imageviewTapped) {
+            if let index = self.stackviewOfImageViews.arrangedSubviews.firstIndex(of: imageviewTapped) {
                 self.delegate?.pictureView(onlyPictureView: self, imageviewTapped, didSelectAt: index)
             }
         }

@@ -86,13 +86,13 @@ class ViewController: UIViewController {
 
 
 extension ViewController: OnlyPicturesDataSource {
-    func numberOfPictures() -> Int {
+    func numberOfPictures(onlyPictureView: OnlyPictures) -> Int {
         return self.pictures.count
     }
-    func visiblePictures() -> Int {
+    func visiblePictures(onlyPictureView: OnlyPictures) -> Int {
         return 6
     }
-    func pictureViews(index: Int) -> UIImage {
+    func pictureViews(onlyPictureView: OnlyPictures, index: Int) -> UIImage {
         return self.pictures[index]
     }
 }
@@ -101,15 +101,14 @@ extension ViewController: OnlyPicturesDelegate {
     
     // ---------------------------------------------------
     // receive an action of selected picture tap index
-    
-    func pictureView(_ imageView: UIImageView, didSelectAt index: Int) {
+    func pictureView(onlyPictureView: OnlyPictures, _ imageView: UIImageView, didSelectAt index: Int) {
         print("Selected index: \(index)")
     }
     
     // ---------------------------------------------------
     // receive an action of tap upon count
     
-    func pictureViewCountDidSelect() {
+    func pictureViewCountDidSelect(onlyPictureView: OnlyPictures) {
         print("Tap on count")
     }
     
@@ -117,7 +116,7 @@ extension ViewController: OnlyPicturesDelegate {
     // receive a count, incase you want to do additionally things with it.
     // even if your requirement is to hide count and handle it externally with below fuction, you can hide it using property `isVisibleCount = true`.
     
-    func pictureViewCount(value: Int) {
+    func pictureViewCount(onlyPictureView: OnlyPictures, value: Int) {
         print("count value: \(value)")
     }
     
@@ -125,7 +124,7 @@ extension ViewController: OnlyPicturesDelegate {
     // ---------------------------------------------------
     // receive an action, whem tap occures anywhere in OnlyPicture view.
     
-    func pictureViewDidSelect() {
+    func pictureViewDidSelect(onlyPictureView: OnlyPictures) {
         print("tap on picture view")
     }
 }
