@@ -454,7 +454,7 @@ internal extension OnlyPictures {
         self.stackView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true
         self.stackView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
         self.stackView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
-        self.stackView.backgroundColor = UIColor.brown
+        self.stackView.backgroundColor = UIColor.clear
     }
     
     func setStackViewOfImageViews() {
