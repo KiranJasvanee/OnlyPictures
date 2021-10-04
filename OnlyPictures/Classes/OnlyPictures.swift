@@ -41,7 +41,7 @@ public class OnlyPictures: UIView {
     internal var stackviewOfImageViews: UIStackView = UIStackView()     // Stackview holds this images in imageViews
     
     // Delegate
-    public var dataSource: OnlyPicturesDataSource? = nil {
+    public weak var dataSource: OnlyPicturesDataSource? = nil {
         didSet {
             if self.dataSource != nil {
                 
@@ -51,7 +51,7 @@ public class OnlyPictures: UIView {
             }
         }
     }
-    public var delegate: OnlyPicturesDelegate? = nil {
+    public weak var delegate: OnlyPicturesDelegate? = nil {
         didSet {
             self.delegate?.pictureViewCount?(onlyPictureView: self, value: self.picturesCount-self.visiblePictures)
         }
