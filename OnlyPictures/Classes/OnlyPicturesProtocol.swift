@@ -130,7 +130,7 @@ extension OnlyPictures: OnlyPictureInsertRemoveProtocol{
         
         // Up onwards other recent imageviews after insertion at 0th position.
         for index in stride(from: 0, to: self.listPictureImageViews.count, by: 1) {
-            stackviewOfImageViews.bringSubviewToFront(self.listPictureImageViews[index])
+            stackviewOfImageViews.bringSubview(toFront: self.listPictureImageViews[index])
         }
         
         self.updateVisiblePicturesWithEffectOfNewInsertionMethod()      // It works to remove first picture to show last/middle inserted picture.
@@ -260,7 +260,7 @@ extension OnlyPictures: OnlyPictureInsertRemoveProtocol{
         
         // Up onwards other recent imageviews after insertion at specific position.
         for index in stride(from: indexInStackView, to: self.listPictureImageViews.count, by: 1) {
-            stackviewOfImageViews.bringSubviewToFront(self.listPictureImageViews[index])
+            stackviewOfImageViews.bringSubview(toFront: self.listPictureImageViews[index])
         }
         
         self.updateVisiblePicturesWithEffectOfNewInsertionMethod()
@@ -496,7 +496,7 @@ extension OnlyPictures{
                 
                 // Up onwards imageview after insertion position.
                 for indexOfUpward in stride(from: 1, to: self.listPictureImageViews.count, by: 1) {
-                    stackviewOfImageViews.bringSubviewToFront(self.listPictureImageViews[indexOfUpward])
+                    stackviewOfImageViews.bringSubview(toFront: self.listPictureImageViews[indexOfUpward])
                 }
             }
         }
